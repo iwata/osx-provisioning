@@ -2,20 +2,34 @@
 - name: OSX Local Provisioner
   hosts: localhost
   sudo: no
-  pre_tasks:
-    - stat: path=~/.ssh
-      register: ssh 
+  vars:
+    rbenv:
+      env: user
+  #pre_tasks:
+    #- stat: path=~/.ssh
+      #register: ssh 
   roles:
     # App Installations
     - brew
     - brew-cask
+    - role: zzet.rbenv
+      rbenv_users:
+        - user
+    - role: avanov.pyenv
+      pyenv_path: "{{ home }}/.pyenv"
+      pyenv_python_versions:
+         - "3.5.1"
+         - "2.7.11"
+    - role: swfz.plenv
+      plenv_global_version: '5.22.1'
 
     # Configurations
-    - git
-    - vim
-    - xcode
+    #- git
+    #- vim
+    #- xcode
     - zsh
-    - {
-      role: ssh,
-      when: not ssh.stat.exists
-    }
+    - go
+    #- {
+      #role: ssh,
+      #when: not ssh.stat.exists
+    #}

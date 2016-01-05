@@ -1,20 +1,11 @@
 homebrew_cask_packages:
-  - 1password
   - alfred
-  - bettertouchtool
-  - caffeine
-  - dropbox
-  - dash
   - gas-mask
+  #- caffeine
   - google-chrome
-  - google-japanese-ime
-  - intellij-idea
   - iterm2
   - karabiner
-  - kindle
-  - sequel-pro
   - skitch
-  - skype
-  - slack
   - vagrant
   - virtualbox
+  - launchrocket

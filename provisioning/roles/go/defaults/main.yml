@@ -1,0 +1,12 @@
+---
+modules:
+  - tools/cmd/httpget
+  - tools/cmd/goimports
+  - github.com/golang/lint/golint
+  - github.com/rogpeppe/godef
+  - github.com/motemen/ghq
+  - github.com/koron/gomigemo/cmd/gmigemogrep
+  - github.com/koron/gomigemo/cmd/gmigemo
+  - github.com/mattn/mkup
+  - github.com/mattn/files
+  - github.com/sonots/lltsv

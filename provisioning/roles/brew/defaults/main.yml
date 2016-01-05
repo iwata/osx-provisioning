@@ -1,16 +1,54 @@
 ---
-homebrew_repositories: []
+homebrew_repositories:
+  - ldr-pages/tldr
+  - monochromegane/pt
+  - homebrew/dupes
+  - homebrew/versions
 
 homebrew_packages:
   - ag
   - autojump
-  - macvim
-  - node
+  - autossh
+  - awscli
+  - cmigemo
+  - colordiff
+  - coreutils
+  - ctags
+  - curl
+  - fontforge
+  - git
+  - git-lfs
+  - gnu-getopt
+  - gnu-tar
+  - go
+  - grep
+  - hub
+  - jq
+  - keychain
+  - name: macvim
+    install_options: with-custom-icons,with-luajit
+  - name: vim
+    install_options: with-luajit
+  - lv
+  - nodebrew
   - peco
+  - pstree
+  - pt
+  - plenv
+  - perl-version
+  - pyenv
+  - rbenv
+  - ruby-build
+  - reattach-to-user-namespace
   - tig
   - tmux
   - tree
-  - vim
+  - the_silver_searcher
+  - tldr
+  - source-highlight
+  - ssh-copy-id
+  - wget
+  - wdiff
   - zsh
   - zsh-completions
   - zsh-syntax-highlighting
