@@ -1,9 +1,11 @@
 ---
 homebrew_repositories:
-  - ldr-pages/tldr
+  - tldr-pages/tldr
   - monochromegane/pt
   - homebrew/dupes
   - homebrew/versions
+  - sanemat/font
+  - caskroom/cask
 
 homebrew_packages:
   - ag
@@ -26,24 +28,24 @@ homebrew_packages:
   - jq
   - keychain
   - name: macvim
-    install_options: with-custom-icons,with-luajit
+    install_options: with-custom-icons,with-lua,with-luajit
   - name: vim
-    install_options: with-luajit
+    install_options: with-lua,with-luajit
   - lv
   - nodebrew
   - peco
   - pstree
   - pt
   - plenv
-  - perl-version
+  - perl-build
   - pyenv
   - rbenv
-  - ruby-build
   - reattach-to-user-namespace
+  - name: ricty
+    install_options: powerline,vim-powerline
   - tig
   - tmux
   - tree
-  - the_silver_searcher
   - tldr
   - source-highlight
   - ssh-copy-id

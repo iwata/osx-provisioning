@@ -5,3 +5,4 @@
   roles:
     # Configurations
     - defaults_v1
+    - apply_defaults

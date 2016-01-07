@@ -3,33 +3,34 @@
   hosts: localhost
   sudo: no
   vars:
-    rbenv:
-      env: user
+    ricty_version: 3.2.4
   #pre_tasks:
     #- stat: path=~/.ssh
-      #register: ssh 
+      #register: ssh
   roles:
     # App Installations
-    - brew
-    - brew-cask
-    - role: zzet.rbenv
-      rbenv_users:
-        - user
-    - role: avanov.pyenv
-      pyenv_path: "{{ home }}/.pyenv"
-      pyenv_python_versions:
-         - "3.5.1"
-         - "2.7.11"
-    - role: swfz.plenv
-      plenv_global_version: '5.22.1'
+    #- brew
+    #- brew-cask
+    #- role: avanov.pyenv
+      #pyenv_path: "{{ home }}/.pyenv"
+      #pyenv_python_versions:
+         #- "3.5.1"
+         #- "2.7.11"
+    #- role: swfz.plenv
+      #plenv_global_version: '5.22.1'
 
     # Configurations
-    #- git
-    #- vim
-    #- xcode
-    - zsh
-    - go
+    - ricty
+    #- dotfiles
+    #- zsh
+    #- go
     #- {
       #role: ssh,
       #when: not ssh.stat.exists
     #}
+  #tasks:
+    #- name: download iTerm2 color theme
+      #get_url: url=https://raw.github.com/aereal/dotfiles/master/colors/Japanesque/Japanesque.itermcolors dest=/tmp/Japanesque.itermcolors force=True
+    #- name: install preset to iTerm2
+      #command: open /tmp/Japanesque.itermcolors
+

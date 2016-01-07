@@ -14,6 +14,4 @@ then
   echo "not found command ansible"
   echo "install ansible"
   sudo pip install ansible
-  ansible-galaxy install zzet.rbenv
-  ansible-galaxy install avanov.pyenv
 fi

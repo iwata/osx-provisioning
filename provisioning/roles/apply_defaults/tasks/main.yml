@@ -1,0 +1,6 @@
+- name: allow applications downloaded from=Anyware
+  sudo: true
+  command: spctl --master-disable
+
+- name: kill apps to apply default settings
+  command: bash -c 'for app in Finder Dock SystemUIServer; do killall "$app" >/dev/null 2>&1; done'

@@ -1,0 +1,6 @@
+---
+gem_modules:
+  - bundler
+  - git-browse-remote
+  - rake
+  - terminal-notifier
