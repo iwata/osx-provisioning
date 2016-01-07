@@ -1,0 +1,57 @@
+- name: confirm whether installed perl or not
+  register: result
+  ignore_errors: True
+  shell: plenv versions |grep {{ perl_version }}
+
+- name: install perl
+  command: plenv install {{ perl_version }}
+  when: result|failed
+
+- name: set global perl version
+  command: plenv global {{ perl_version }}
+  when: result|failed
+
+- name: rehash
+  command: plenv rehash
+  when: result|failed
+
+- name: update cpanm
+  register: cpanm_result
+  ignore_errors: True
+  command: >
+    cpanm --self-upgrade
+
+- name: install cpanm
+  command: plenv install-cpanm
+  when: cpanm_result|failed
+
+- name: install outdated modules
+  cpanm:
+    name={{ item }}
+    notest=1
+  when: cpanm_result|failed
+  with_items:
+    - "local::lib"
+    - "App::cpanoutdated"
+
+- name: outdated rehash
+  command: plenv rehash
+  when: result|failed
+
+- name: update outdated modules
+  shell: cpan-outdated | cpanm
+  when: result|failed
+
+- name: install cpan modules
+  cpanm:
+    name={{ item }}
+  with_items:
+    - "Vi::QuickFix"
+    - Carton
+    - "App::httpstatus"
+    - "Pod::Text::Color::Delight"
+    - L
+
+- name: finally rehash
+  command: plenv rehash
+

@@ -1,0 +1,5 @@
+---
+pip_modules:
+  - Pygments
+  - httpie
+  - ansible

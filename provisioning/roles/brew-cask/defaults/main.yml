@@ -8,6 +8,7 @@ homebrew_cask_packages:
   #- caffeine
   - google-chrome
   - iterm2
+  - java
   - karabiner
   #- kensington-trackball-works
   - launchrocket
