@@ -1,18 +1,18 @@
 - name: confirm whether installed ruby or not
   register: result
   ignore_errors: True
-  command: bash -c "rbenv versions |grep {{ ruby_version }}"
+  shell: rbenv versions |grep {{ ruby_version }}
 
 - name: install ruby
-  command: rbenv install {{ ruby_version }}
+  shell: rbenv install {{ ruby_version }}
   when: result|failed
 
 - name: set global ruby version
-  command: rbenv global {{ ruby_version }}
+  shell: rbenv global {{ ruby_version }}
   when: result|failed
 
 - name: update gem
-  command: bash -c "gem update --system; gem update"
+  shell: gem update --system; gem update
 
 - name: install gem modules
   gem:

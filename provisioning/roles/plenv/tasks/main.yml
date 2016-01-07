@@ -4,25 +4,25 @@
   shell: plenv versions |grep {{ perl_version }}
 
 - name: install perl
-  command: plenv install {{ perl_version }}
+  shell: plenv install {{ perl_version }}
   when: result|failed
 
 - name: set global perl version
-  command: plenv global {{ perl_version }}
+  shell: plenv global {{ perl_version }}
   when: result|failed
 
 - name: rehash
-  command: plenv rehash
+  shell: plenv rehash
   when: result|failed
 
 - name: update cpanm
   register: cpanm_result
   ignore_errors: True
-  command: >
+  shell: >
     cpanm --self-upgrade
 
 - name: install cpanm
-  command: plenv install-cpanm
+  shell: plenv install-cpanm
   when: cpanm_result|failed
 
 - name: install outdated modules
@@ -35,7 +35,7 @@
     - "App::cpanoutdated"
 
 - name: outdated rehash
-  command: plenv rehash
+  shell: plenv rehash
   when: result|failed
 
 - name: update outdated modules
@@ -53,5 +53,5 @@
     - L
 
 - name: finally rehash
-  command: plenv rehash
+  shell: plenv rehash
 
