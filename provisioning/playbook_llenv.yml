@@ -5,7 +5,8 @@
   vars:
     ruby_version: 2.3.0
     perl_version: 5.22.1
-    python2_version: 2.7.11
+    python_version: 2.7.11
     node_version: 5.3.0
   roles:
-    - rbenv
+    #- rbenv
+    - pyenv

@@ -1,0 +1,35 @@
+- name: confirm whether installed python or not
+  register: result
+  ignore_errors: True
+  shell: pyenv versions |grep {{ python_version }}
+
+- name: install python
+  environment:
+    LDFLAGS: "-L/usr/local/opt/zlib/lib"
+    CPPFLAGS: "-I/usr/local/opt/zlib/include"
+  command: pyenv install {{ python_version }}
+  when: result|failed
+
+- name: set global python version
+  command: pyenv global {{ python_version }}
+  when: result|failed
+
+- name: rehash
+  command: pyenv rehash
+  when: result|failed
+
+- name: upgrade pip
+  command: pip install --upgrade pip
+
+- name: install pip modules
+  pip:
+    name={{ item.name | default(item) }}
+    state={{ item.state | default('present') }}
+  with_items: pip_modules
+  when: pip_modules
+  sudo: false
+
+- name: re-rehash
+  command: pyenv rehash
+  when: result|failed
+

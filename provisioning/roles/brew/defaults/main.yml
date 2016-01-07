@@ -20,6 +20,8 @@ homebrew_packages:
   - fontforge
   - git
   - git-lfs
+  - name: global
+    install_options: with-ctags,with-pygments
   - gnu-getopt
   - gnu-tar
   - go
@@ -51,6 +53,7 @@ homebrew_packages:
   - ssh-copy-id
   - wget
   - wdiff
+  - zlib
   - zsh
   - zsh-completions
   - zsh-syntax-highlighting
