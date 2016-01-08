@@ -64,14 +64,28 @@ mac_defaults_settings:
   - {
     domain: com.apple.driver.AppleBluetoothMultitouch.trackpad,
     key: Clicking,
-    type: int,
-    value: 1,
+    type: bool,
+    value: true,
   }
 
   # Enable Look up & data detectors with The Three Finger Tap
   - {
     domain: com.apple.driver.AppleBluetoothMultitouch.trackpad,
     key: TrackpadThreeFingerTapGesture,
+    type: int,
+    value: 2,
+  }
+
+  - {
+    domain: com.apple.driver.AppleBluetoothMultitouch.mouse,
+    key: MouseTwoFingerHorizSwipeGesture,
+    type: int,
+    value: 1,
+  }
+
+  - {
+    domain: com.apple.universalaccess,
+    key: mouseDriverCursorSize,
     type: int,
     value: 2,
   }
@@ -91,15 +105,41 @@ mac_defaults_settings:
   }
   - {
     domain: com.apple.dock,
-    key: orientation,
-    type: string,
-    value: "left",
-  }
-  - {
-    domain: com.apple.dock,
     key: tilesize,
     type: int,
     value: 50,
+  }
+
+  # Menubar
+  - {
+    domain: com.apple.menuextra.battery,
+    key: ShowPercent,
+    type: string,
+    value: YES,
+  }
+  - {
+    domain: com.apple.menuextra.battery,
+    key: ShowTime,
+    type: string,
+    value: NO,
+  }
+  - {
+    domain: com.apple.menuextra.clock,
+    key: DateFormat,
+    type: string,
+    value: "M\\U6708d\\U65e5(EEE)  H:mm:ss",
+  }
+  - {
+    domain: com.apple.menuextra.clock,
+    key: FlashDateSeparators,
+    type: bool,
+    value: false,
+  }
+  - {
+    domain: com.apple.menuextra.clock,
+    key: IsAnalog,
+    type: bool,
+    value: false,
   }
 
 mac_global_domain_defaults_settings:

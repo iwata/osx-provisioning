@@ -14,7 +14,7 @@
 - name: grep shells
   shell: >
     cat /etc/shells | grep "{{which_zsh.stdout}}"
-  register: grep_shells 
+  register: grep_shells
   ignore_errors: True
 
 - debug: msg="{{grep_shells}}"

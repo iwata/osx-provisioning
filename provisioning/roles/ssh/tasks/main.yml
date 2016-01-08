@@ -1,2 +1,8 @@
-- name: create .ssh directory to {{ansible_user_dir}}
-  file: src={{ansible_user_dir}}/ssh dest={{ansible_user_dir}}/.ssh state=link force=True
+- name: change permission for secret key files for SSH
+  file: path={{ ansible_env.HOME }}/.ssh/{{ item }} mode=600
+  with_items:
+    - config
+    - game
+    - github.dena.jp
+    - id_dsa
+    - nopass-dsa

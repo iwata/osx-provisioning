@@ -17,13 +17,18 @@ homebrew_packages:
   - coreutils
   - ctags
   - curl
+  - elasticsearch17
   - fontforge
+  - name: findutils
+    install_options: with-default-names
   - git
   - git-lfs
   - name: global
     install_options: with-ctags,with-pygments
   - gnu-getopt
-  - gnu-tar
+  - name: gnu-tar
+    install_options: with-default-names
+  - gnu-sed
   - go
   - grep
   - hub

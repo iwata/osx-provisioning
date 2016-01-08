@@ -1,0 +1,21 @@
+- name: symlink plist for E/S
+  file: src=/usr/local/opt/elasticsearch17/homebrew.mxcl.elasticsearch17.plist dest={{ ansible_env.HOME }}/LaunchAgents state=link
+
+- name: load E/S plist
+  shell: launchctl load {{ ansible_env.HOME }}/LaunchAgents/homebrew.mxcl.elasticsearch17.plist
+
+- name: install plugins
+  elasticsearch_plugin:
+    name={{ item.name|default(item) }}
+    version={{ item.version|default('') }}
+    plugin_bin=/usr/local/opt/elasticsearch17/bin/plugin
+    plugin_dir=/usr/local/var/lib/elasticsearch/plugins
+  with_items:
+    - name: elasticsearch/elasticsearch-analysis-kuromoji
+      version: 2.7.0
+    - polyfractal/elasticsearch-inquisitor
+    - lmenezes/elasticsearch-kopf
+    - royrusso/elasticsearch-HQ
+
+- name: restart Elasticsearch
+  shell: launchctl stop homebrew.mxcl.elasticsearch17 && launchctl start homebrew.mxcl.elasticsearch17

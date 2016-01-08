@@ -1,7 +1,6 @@
 ---
 - name: OSX Local Provisioner to install ll
   hosts: localhost
-  sudo: no
   vars:
     ruby_version: 2.3.0
     perl_version: 5.22.1

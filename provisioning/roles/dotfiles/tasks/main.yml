@@ -1,11 +1,4 @@
-- name: confirm whether has alread made symlinks or not
-  register: result
-  ignore_errors: True
-  sudo: false
-  command: test -L {{ ansible_env.HOME }}/.vimrc
-
 - name: make symlinks of dotfiles
   sudo: false
-  command: rake install chdir={{ ansible_env.HOME }}/Dropbox/dotfiles
-  when: result|failed
+  command: rake install chdir={{ ansible_env.HOME }}/Dropbox/dotfiles creates={{ ansible_env.HOME }}/.vimrc
 

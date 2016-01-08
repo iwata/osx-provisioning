@@ -1,0 +1,16 @@
+- name: git-clone ansible
+  git:
+    repo=https://github.com/ansible/ansible.git
+    dest=/tmp/ansible2
+    version={{ ansible2_version }}
+    update=no
+
+- name: whether installed ansible2 or not
+  shell: ansible --version |grep "ansible 2"
+  register: result
+  ignore_errors: true
+
+- name: install ansible2
+  shell: make && make install chdir=/tmp/ansible2
+  when: result|failed
+

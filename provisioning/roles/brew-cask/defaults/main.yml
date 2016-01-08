@@ -1,18 +1,16 @@
 homebrew_cask_packages:
   - alfred
-  #- aquaskk
-  #- box-sync
-  - choosy
+  - aquaskk
+  - box-sync
+  - caffeine
   - flux
   - gas-mask
-  #- caffeine
-  - google-chrome
+  #- google-chrome
   - iterm2
   - java
   - karabiner
-  #- kensington-trackball-works
+  - kensington-trackball-works
   - launchrocket
-  #- mailplane
   - skitch
   - vagrant
   - virtualbox
