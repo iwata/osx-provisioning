@@ -17,5 +17,9 @@
     #- dotfiles
     #- zsh
     #- ssh
-    - ansible2
-
+    #- ansible2
+  tasks:
+    - name: download Dyazo
+      get_url: url=http://dyazo.mbga.local/apps/Dyazo.tar.gz dest=/tmp/
+    - name: install Dyazo
+      unarchive: src=/tmp/Dyazo.tar.gz dest={{ ansible_env.HOME }}/Applications

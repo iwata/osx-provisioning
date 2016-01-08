@@ -2,7 +2,6 @@ homebrew_cask_packages:
   - alfred
   - aquaskk
   - box-sync
-  - caffeine
   - flux
   - gas-mask
   #- google-chrome

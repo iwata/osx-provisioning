@@ -3,12 +3,10 @@
 # 
 
 mac_defaults_settings:
-  - {
-    domain: com.apple.ImageCapture,
-    key: disableHotPlug,
-    type: bool,
-    value: false,
-  }
+  - domain: com.apple.ImageCapture
+    key: disableHotPlug
+    type: bool
+    value: false
   # Finder
   - {
     domain: com.apple.finder,
@@ -127,7 +125,7 @@ mac_defaults_settings:
     domain: com.apple.menuextra.clock,
     key: DateFormat,
     type: string,
-    value: "M\\U6708d\\U65e5(EEE)  H:mm:ss",
+    value: "M\\U6708d\\U65e5(EEE)  H:mm",
   }
   - {
     domain: com.apple.menuextra.clock,

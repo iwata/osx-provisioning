@@ -1,5 +1,5 @@
 - name: allow applications downloaded from=Anyware
-  sudo: true
+  become: true
   command: spctl --master-disable
 
 - name: kill apps to apply default settings
