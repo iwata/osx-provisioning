@@ -1,4 +1,3 @@
 - name: make symlinks of dotfiles
-  sudo: false
   command: rake install chdir={{ ansible_env.HOME }}/Dropbox/dotfiles creates={{ ansible_env.HOME }}/.vimrc
 

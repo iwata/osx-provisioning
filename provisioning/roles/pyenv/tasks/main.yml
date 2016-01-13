@@ -27,7 +27,6 @@
     state={{ item.state | default('present') }}
   with_items: pip_modules
   when: pip_modules
-  sudo: false
 
 - name: re-rehash
   shell: pyenv rehash

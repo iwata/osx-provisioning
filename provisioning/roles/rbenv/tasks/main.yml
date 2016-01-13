@@ -21,4 +21,3 @@
     version={{ item.version | default('') }}
   with_items: gem_modules
   when: gem_modules
-  sudo: false

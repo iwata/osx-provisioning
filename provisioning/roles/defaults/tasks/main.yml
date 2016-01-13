@@ -1,9 +1,9 @@
-- name: 
+- name:
   osx_defaults:
-    domain={{ item.domain }}
+    domain={{ item.domain|default('NSGlobalDomain') }}
     key={{ item.key }}
     type={{ item.type }}
-    value={{ item.value }}
+    value={% if item.value is sameas true %}true{% elif item.value is sameas false %}false{% else %}{{ item.value }}{% endif %}
     state=present
   with_items: mac_defaults_settings
   when: mac_defaults_settings

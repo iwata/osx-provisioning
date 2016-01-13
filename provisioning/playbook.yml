@@ -1,7 +1,6 @@
 ---
 - name: OSX Local Provisioner
   hosts: localhost
-  sudo: no
   vars:
     ricty_version: 3.2.4
     ansible2_version: v2.0.0-0.9.rc4
@@ -17,7 +16,6 @@
     #- dotfiles
     #- zsh
     #- ssh
-    #- ansible2
   tasks:
     - name: download Dyazo
       get_url: url=http://dyazo.mbga.local/apps/Dyazo.tar.gz dest=/tmp/

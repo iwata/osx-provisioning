@@ -62,8 +62,8 @@ mac_defaults_settings:
   - {
     domain: com.apple.driver.AppleBluetoothMultitouch.trackpad,
     key: Clicking,
-    type: bool,
-    value: true,
+    type: int,
+    value: 1,
   }
 
   # Enable Look up & data detectors with The Three Finger Tap
@@ -140,7 +140,6 @@ mac_defaults_settings:
     value: false,
   }
 
-mac_global_domain_defaults_settings:
   - {
     key: InitialKeyRepeat,
     type: int,
