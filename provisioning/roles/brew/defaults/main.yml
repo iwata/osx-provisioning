@@ -1,26 +1,29 @@
 ---
 homebrew_repositories:
   - tldr-pages/tldr
-  - monochromegane/pt
   - homebrew/dupes
   - homebrew/versions
   - sanemat/font
   - caskroom/cask
+  - neovim/neovim
 
 homebrew_packages:
   - ag
   - autojump
   - autossh
   - awscli
+  - argon/mas/mas
   - cmigemo
   - colordiff
   - coreutils
   - ctags
   - curl
   - elasticsearch17
+  - exiftool
   - fontforge
   - name: findutils
     install_options: with-default-names
+  - ghq
   - git
   - git-lfs
   - name: global
@@ -28,23 +31,29 @@ homebrew_packages:
   - gnu-getopt
   - name: gnu-tar
     install_options: with-default-names
-  - gnu-sed
+  - name: gnu-sed
+    install_options: with-default-names
   - go
-  - grep
+  - name: grep
+    install_options: with-default-names
+  - hadolint
   - hub
+  - jo
   - jq
+  - jvgrep
   - keychain
   - name: macvim
     install_options: with-custom-icons,with-lua,with-luajit
   - name: vim
     install_options: with-lua,with-luajit
   - lv
+  - neovim
   - nodebrew
   - peco
-  - pstree
-  - pt
-  - plenv
   - perl-build
+  - plantuml
+  - plenv
+  - pstree
   - pyenv
   - rbenv
   - reattach-to-user-namespace

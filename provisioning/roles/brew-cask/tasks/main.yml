@@ -3,6 +3,10 @@
   homebrew_tap: tap=caskroom/cask state=present
   sudo: false
 
+- name: tap external fonts repositories
+  homebrew_tap: tap=caskroom/fonts state=present
+  sudo: false
+
 - name: update homebrew_cask
   homebrew: name=brew-cask state=latest
   sudo: false

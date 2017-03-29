@@ -56,6 +56,12 @@ mac_defaults_settings:
     type: bool,
     value: true,
   }
+  - {
+    domain: com.apple.finder,
+    key: DisableAllAnimations,
+    type: bool,
+    value: true,
+  }
   # Trackpad
 
   # Enable clicking by tap
@@ -106,6 +112,12 @@ mac_defaults_settings:
     key: tilesize,
     type: int,
     value: 50,
+  }
+  - {
+    domain: com.apple.dock,
+    key: launchanim,
+    type: bool,
+    value: false,
   }
 
   # Menubar
@@ -164,4 +176,24 @@ mac_defaults_settings:
     key: AppleShowAllExtensions,
     type: bool,
     value: true
+  }
+  - {
+    key: NSAutomaticWindowAnimationsEnabled,
+    type: bool,
+    value: false
+  }
+  - {
+    key: QLPanelAnimationDuration,
+    type: float,
+    value: 0
+  }
+  - {
+    key: NSWindowResizeTime,
+    type: float,
+    value: 0.001
+  }
+  - {
+    key: NSWindowResizeTime,
+    type: float,
+    value: 0.001
   }

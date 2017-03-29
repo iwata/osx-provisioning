@@ -1,16 +1,17 @@
 homebrew_cask_packages:
-  - alfred
+ # - alfred
   - aquaskk
-  - box-sync
+#  - cheatsheet
   - flux
+  - font-fira-code
   - gas-mask
   #- google-chrome
-  - iterm2
+ # - iterm2
   - java
-  - karabiner
+ # - karabiner
   - kensington-trackball-works
-  - launchrocket
+ # - launchrocket
   - skitch
-  - vagrant
-  - virtualbox
+ # - vagrant
+ # - virtualbox
   - windownaut

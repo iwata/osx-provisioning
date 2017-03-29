@@ -10,3 +10,4 @@ modules:
   - github.com/mattn/mkup
   - github.com/mattn/files
   - github.com/sonots/lltsv
+  - github.com/davecheney/httpstat

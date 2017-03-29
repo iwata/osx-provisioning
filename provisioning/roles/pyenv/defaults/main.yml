@@ -1,4 +1,9 @@
 ---
 pip_modules:
   - Pygments
+  - flake8
   - httpie
+  - neovim
+  - nose
+  - 'aws-shell'
+  - thefuck
