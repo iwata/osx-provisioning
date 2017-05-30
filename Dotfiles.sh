@@ -1,5 +1,4 @@
 #!/bin/bash
-set -eux
 
 cd ~/Dropbox/dotfiles
 rake install

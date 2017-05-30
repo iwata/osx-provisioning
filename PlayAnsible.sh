@@ -1,5 +1,4 @@
 #!/bin/bash
-set -eux
 
 . Context.sh
 show_context

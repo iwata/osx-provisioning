@@ -48,9 +48,9 @@ homebrew_packages:
   - jvgrep
   - keychain
   - name: macvim
-    install_options: with-lua,with-luajit
+    install_options: with-lua,with-luajit,with-python3
   - name: vim
-    install_options: with-lua,with-luajit
+    install_options: with-lua,with-luajit,with-python3,with-tcl
   - lv
   - neovim
   - nodebrew
@@ -60,6 +60,7 @@ homebrew_packages:
   - plenv
   - pstree
   - pyenv
+  - pyenv-virtualenv
   - rbenv
   - reattach-to-user-namespace
   - name: ricty

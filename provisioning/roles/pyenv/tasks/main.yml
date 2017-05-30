@@ -1,21 +1,26 @@
 - name: confirm whether installed python or not
-  register: result
+  register: result2
   ignore_errors: True
-  shell: pyenv versions |grep "{{ python_version }}"
+  shell: pyenv versions |grep "{{ python_version2 }}"
 
 - name: install python
   environment:
+    #PYTHON_CONFIGURE_OPTS: "--enable-shared"
     LDFLAGS: "-L/usr/local/opt/zlib/lib"
     CPPFLAGS: "-I/usr/local/opt/zlib/include"
-  shell: pyenv install "{{ python_version }}"
-  when: result|failed
+    #LDSHARED: "clang -bundle"
+    #LDCXXSHARED: "clang++ -bundle"
+    #BLDSHARED: "clang -bundle -lpython2.7"
+  shell: pyenv install "{{ python_version2 }}"
+  when: result2|failed
 
 - name: set global python version
-  shell: pyenv global "{{ python_version }}"
-  when: result|failed
+  shell: pyenv global "{{ python_version2 }}"
+  when: result2|failed
 
 - name: upgrade pip
   shell: pip install --upgrade pip
+  when: result2|failed
 
 - name: install pip modules
   pip:
@@ -23,3 +28,44 @@
     state: "{{ item.state | default('present') }}"
   with_items: "{{ pip_modules }}"
   when: pip_modules
+
+- name: virtualenv for neovim
+  shell: pyenv virtualenv "{{ python_version2 }}" neovim2
+
+- name: confirm whether installed python or not
+  register: result3
+  ignore_errors: True
+  shell: pyenv versions |grep "{{ python_version3 }}"
+
+- name: install python
+  environment:
+    #PYTHON_CONFIGURE_OPTS: "--enable-shared"
+    LDFLAGS: "-L/usr/local/opt/zlib/lib"
+    CPPFLAGS: "-I/usr/local/opt/zlib/include"
+    #LDSHARED: "clang -bundle"
+    #LDCXXSHARED: "clang++ -bundle"
+    #BLDSHARED: "clang -bundle -lpython3.6m"
+  shell: pyenv install "{{ python_version3 }}"
+  when: result3|failed
+
+- name: set global python version
+  shell: pyenv global "{{ python_version3 }}"; pyenv rehash
+  when: result3|failed
+
+- name: upgrade pip
+  shell: pip install --upgrade pip
+  when: result3|failed
+
+- name: install pip modules
+  pip:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+  with_items: "{{ pip_modules }}"
+  when: pip_modules
+
+- name: virtualenv for neovim
+  shell: pyenv virtualenv "{{ python_version3 }}" neovim3
+
+- name: activate virtualenv
+  shell: pyenv activate neovim3
+

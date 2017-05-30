@@ -1,5 +1,4 @@
 #!/bin/bash
-set -eux
 
 which pip >/dev/null 2>&1
 if [ $? -ne 0 ];

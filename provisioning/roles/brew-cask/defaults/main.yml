@@ -1,16 +1,14 @@
 homebrew_cask_packages:
-  - 1password
+  #- 1password
   - alfred
   - aquaskk
-  - chatwork
   - choosy
   - dash
-  - flux
+  #- flux
   - gas-mask
   - google-chrome
   - iterm2
   - hammerspoon
-  #- java
   - kensington-trackball-works
   - launchrocket
   - mailplane

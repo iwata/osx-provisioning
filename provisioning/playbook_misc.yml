@@ -2,11 +2,11 @@
 - name: OSX Local Provisioner
   hosts: localhost
   roles:
-    #- ricty
-    #- go
+    - ricty
+    - go
     - launchctl
-  #tasks:
-    #- name: download iTerm2 color theme
-      #get_url: url=https://raw.github.com/aereal/dotfiles/master/colors/Japanesque/Japanesque.itermcolors dest=/tmp/Japanesque.itermcolors force=True
-    #- name: install preset to iTerm2
-      #command: open /tmp/Japanesque.itermcolors
+  tasks:
+    - name: download iTerm2 color theme
+      get_url: url=https://raw.github.com/aereal/dotfiles/master/colors/Japanesque/Japanesque.itermcolors dest=/tmp/Japanesque.itermcolors force=True
+    - name: install preset to iTerm2
+      command: open /tmp/Japanesque.itermcolors

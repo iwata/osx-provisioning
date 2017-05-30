@@ -4,4 +4,3 @@
   roles:
     # Configurations
     - defaults
-    - gatekeeper

@@ -19,5 +19,6 @@
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
     version: "{{ item.version | default('') }}"
+    user_install: no
   with_items: "{{ gem_modules }}"
   when: gem_modules

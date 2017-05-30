@@ -6,7 +6,7 @@ install_ansible :
 	@./InstallAnsible.sh
 
 .PHONY: dotfiles
-play_ansible :
+dotfiles :
 	@./Dotfiles.sh
 
 .PHONY: play_ansible

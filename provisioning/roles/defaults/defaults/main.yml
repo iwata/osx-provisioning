@@ -508,3 +508,8 @@ mac_defaults_settings:
     type: int,
     value: 1,
   }
+  - {
+    key: AppleInterfaceStyle,
+    type: string,
+    value: Dark,
+  }
