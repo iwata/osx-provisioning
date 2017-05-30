@@ -1,17 +1,24 @@
 homebrew_cask_packages:
- # - alfred
+  - 1password
+  - alfred
   - aquaskk
-#  - cheatsheet
+  - chatwork
+  - choosy
+  - dash
   - flux
-  - font-fira-code
   - gas-mask
-  #- google-chrome
- # - iterm2
-  - java
- # - karabiner
+  - google-chrome
+  - iterm2
+  - hammerspoon
+  #- java
   - kensington-trackball-works
- # - launchrocket
+  - launchrocket
+  - mailplane
   - skitch
- # - vagrant
- # - virtualbox
+  - skype-for-business
+  - slack
+  - thunderbird
+  - vagrant
+  - vanilla
+  - virtualbox
   - windownaut

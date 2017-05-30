@@ -1,0 +1,6 @@
+---
+- name: for fish
+  hosts: localhost
+  roles:
+    - fish
+    - gatekeeper

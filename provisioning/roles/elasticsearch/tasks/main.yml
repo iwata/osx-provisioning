@@ -1,8 +1,11 @@
 - name: symlink plist for E/S
-  file: src=/usr/local/opt/elasticsearch17/homebrew.mxcl.elasticsearch17.plist dest={{ ansible_env.HOME }}/LaunchAgents state=link
+  file:
+    src: /usr/local/opt/elasticsearch17/homebrew.mxcl.elasticsearch17.plist
+    dest: {{ ansible_env.HOME }}/Library/LaunchAgents
+    state: link
 
 - name: load E/S plist
-  shell: launchctl load {{ ansible_env.HOME }}/LaunchAgents/homebrew.mxcl.elasticsearch17.plist
+  shell: launchctl load {{ ansible_env.HOME }}/Library/LaunchAgents/homebrew.mxcl.elasticsearch17.plist
 
 - name: install plugins
   elasticsearch_plugin:

@@ -1,9 +1,0 @@
-- name: downloads Alcatraz installer
-  get_url:
-   url=https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh
-   dest=/tmp/alcatraz_installer.sh
-   force=True
-
-- name: install Alcatraz
-  shell: >
-    sh /tmp/alcatraz_installer.sh

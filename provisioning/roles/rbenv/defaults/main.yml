@@ -2,7 +2,8 @@
 gem_modules:
   - bundler
   - git-browse-remote
+  - google-ime-skk
   - rake
-  - terminal-notifier
+  #- terminal-notifier
   - rcodetools
   - fastri

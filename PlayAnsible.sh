@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eux
 
 . Context.sh
 show_context
@@ -8,27 +9,22 @@ function pa_echo () {
   echo [${TASK_NAME}] $1
 }
 
+pa_echo "Install Xcodle CLI"
+sudo xcodebuild -license
+
 cd ${PROVISIONING_HOME}/provisioning > /dev/null 2>&1
 
+pa_echo "Doing playbook for Mac defaults"
+ansible-playbook playbook_defaults.yml
+
 pa_echo "Doing common playbook"
-HOMEBREW_CASK_OPTS="--appdir=/Applications" ansible-playbook playbook.yml -i hosts
+env HOMEBREW_CASK_OPTS="--appdir=/Applications" ansible-playbook playbook.yml
 
-# via ansible2
-ansible-playbook playbook_after_brew.yml -i hosts
+pa_echo "Use fish as a login shell"
+ansible-playbook playbook_fish.yml --ask-become-pass
+fish
 
-ANSIBLE_VERSION_MAJOR=$(echo $(ansible --version) | sed -E "s/.*[^0-9]([0-9]+\.[0-9]+\.[0-9]+).*/\1/g" | cut -d"." -f1)
-echo "ANSIBLE_VERSION_MAJOR=${ANSIBLE_VERSION_MAJOR}"
-if [ $ANSIBLE_VERSION_MAJOR -eq 1 ]
-then
-  DEFAULTS_PLAYBOOK=playbook_defaults_v1.yml
-else
-  DEFAULTS_PLAYBOOK=playbook_defaults.yml
-fi
-
-pa_echo "Doing playbook is ${DEFAULTS_PLAYBOOK}, which is depending ansible version"
-ansible-playbook ${DEFAULTS_PLAYBOOK} -i hosts
-
-source $HOME/.zshenv
-ansible-playbook playbook_llenv.yml -i hosts
+ansible-playbook playbook_llenv.yml
+ansible-playbook playbook_misc.yml
 
 osascript -e 'display notification "Successfull please restart or re-login" with title "osx-provisioning"'

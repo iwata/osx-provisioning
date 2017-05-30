@@ -1,0 +1,4 @@
+- name: allow applications downloaded from Anyware on Gatekeeper
+  become: true
+  become_method: sudo
+  command: spctl --master-disable

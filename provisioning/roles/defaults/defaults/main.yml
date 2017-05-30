@@ -1,7 +1,6 @@
 #
-# see also https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/defaults.1.html 
-# 
-
+# see also https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/defaults.1.html
+#
 mac_defaults_settings:
   - domain: com.apple.ImageCapture
     key: disableHotPlug
@@ -13,6 +12,17 @@ mac_defaults_settings:
     key: NewWindowTarget,
     type: string,
     value: PfDe,
+  }
+  - {
+    domain: com.apple.finder,
+    key: CreateDesktop,
+    type: bool,
+    value: false,
+  }
+  - {
+    domain: com.apple.finder,
+    key: QuitMenuItem,
+    value: true,
   }
   - {
     domain: com.apple.finder,
@@ -52,7 +62,13 @@ mac_defaults_settings:
   }
   - {
     domain: com.apple.finder,
-    key: AppleShowAllFiles,
+    key: _FXShowPosixPathInTitle,
+    type: bool,
+    value: true,
+  }
+  - {
+    domain: com.apple.finder,
+    key: _FXSortFoldersFirst,
     type: bool,
     value: true,
   }
@@ -62,12 +78,38 @@ mac_defaults_settings:
     type: bool,
     value: true,
   }
+  - {
+    domain: com.apple.finder,
+    key: QLEnableTextSelection,
+    type: bool,
+    value: true,
+  }
+  # Disable the warning when changing a file extension
+  - {
+    domain: com.apple.finder,
+    key: FXEnableExtensionChangeWarning,
+    type: bool,
+    value: false,
+  }
+  # Use list view in all Finder windows by default
+  - {
+    domain: com.apple.finder,
+    key: FXPreferredViewStyle,
+    type: string,
+    value: "Nlsv",
+  }
+  
   # Trackpad
 
   # Enable clicking by tap
   - {
     domain: com.apple.driver.AppleBluetoothMultitouch.trackpad,
     key: Clicking,
+    type: bool,
+    value: true,
+  }
+  - {
+    key: com.apple.mouse.tapBehavior,
     type: int,
     value: 1,
   }
@@ -90,8 +132,8 @@ mac_defaults_settings:
   - {
     domain: com.apple.universalaccess,
     key: mouseDriverCursorSize,
-    type: int,
-    value: 2,
+    type: float,
+    value: 1,
   }
 
   # Dock
@@ -105,19 +147,36 @@ mac_defaults_settings:
     domain: com.apple.dock,
     key: magnification,
     type: bool,
-    value: false,
+    value: true,
   }
   - {
     domain: com.apple.dock,
     key: tilesize,
     type: int,
-    value: 50,
+    value: 36,
   }
   - {
     domain: com.apple.dock,
     key: launchanim,
     type: bool,
-    value: false,
+    value: true,
+  }
+  # Enable highlight hover effect for the grid view of a stack (Dock)
+  - {
+    domain: com.apple.dock,
+    key: mouse-over-hilite-stack,
+    value: true,
+  }
+  - {
+    domain: com.apple.dock,
+    key: show-process-indicators,
+    value: true,
+  }
+  # Minimize windows into their application’s icon
+  - {
+    domain: com.apple.dock,
+    key: minimize-to-application,
+    value: true,
   }
 
   # Menubar
@@ -155,12 +214,12 @@ mac_defaults_settings:
   - {
     key: InitialKeyRepeat,
     type: int,
-    value: 15,
+    value: 10,
   }
   - {
     key: KeyRepeat,
     type: int,
-    value: 3,
+    value: 1,
   }
   - {
     key: com.apple.trackpad.scaling,
@@ -196,4 +255,256 @@ mac_defaults_settings:
     key: NSWindowResizeTime,
     type: float,
     value: 0.001
+  }
+  - {
+    key: AppleShowAllFiles,
+    type: bool,
+    value: true,
+  }
+  
+  # Safari
+  - {
+    domain: com.apple.Safari,
+    key: com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled,
+    type: bool,
+    value: true,
+  }
+  - {
+    domain: com.apple.Safari,
+    key: IncludeDevelopMenu,
+    type: bool,
+    value: true,
+  }
+  - {
+    domain: com.apple.Safari,
+    key: WebKitDeveloperExtrasEnabledPreferenceKey,
+    type: bool,
+    value: true,
+  }
+  # Show the full URL in the address bar (note: this still hides the scheme)
+  - {
+    domain: com.apple.Safari,
+    key: ShowFullURLInSmartSearchField,
+    type: bool,
+    value: true,
+  }
+  # Press Tab to highlight each item on a web page
+  - {
+    domain: com.apple.Safari,
+    key: WebKitTabToLinksPreferenceKey,
+    type: bool,
+    value: true,
+  }
+  - {
+    domain: com.apple.Safari,
+    key: com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks,
+    type: bool,
+    value: true,
+  }
+  - {
+    domain: com.apple.Safari,
+    key: ShowFavoritesBar,
+    type: bool,
+    value: true,
+  }
+  # Warn about fraudulent websites
+  - {
+    domain: com.apple.Safari,
+    key: WarnAboutFraudulentWebsites,
+    type: bool,
+    value: true,
+  }
+  # Disable the standard delay in rendering a Web page
+  - {
+    domain: com.apple.Safari,
+    key: WebKitInitialTimedLayoutDelay,
+    type: float,
+    value: 0.25,
+  }
+  - {
+    key: WebKitDeveloperExtras,
+    type: bool,
+    value: true,
+  }
+
+  # Avoid creating `.DS_Store` files on network volumes
+  - {
+    domain: com.apple.desktopservices,
+    key: DSDontWriteNetworkStores,
+    type: bool,
+    value: true,
+  }
+  # Disable the "Are you sure you want to open this application?" dialog
+  - {
+    domain: com.apple.LaunchServices,
+    key: LSQuarantine,
+    type: bool,
+    value: false,
+  }
+  # Automatically quit the printer app once the print jobs are completed
+  - {
+    domain: com.apple.print.PrintingPrefs,
+    key: "Quit When Finished",
+    type: bool,
+    value: true,
+  }
+  # Require password immediately after the computer went into
+  - {
+    domain: com.apple.screensaver,
+    key: askForPassword,
+    type: int,
+    value: 1,
+  }  
+  - {
+    domain: com.apple.screensaver,
+    key: askForPasswordDelay,
+    type: float,
+    value: 0,
+  }  
+  # Always show scrollbars
+  - {
+    key: AppleShowScrollBars,
+    type: string,
+    value: Always,
+  }
+  # Disable the crash reporter
+  - {
+    domain: com.apple.CrashReporter,
+    key: DialogType,
+    type: string,
+    value: "none",
+  }
+  # Disable automatic capitalization as it’s annoying when typing code
+  - {
+    key: NSAutomaticCapitalizationEnabled,
+    value: false,
+  }
+  # Disable auto-correct
+  - {
+    key: NSAutomaticSpellingCorrectionEnabled,
+    value: false,
+  }
+  # Increase sound quality for Bluetooth headphones/headsets
+  - {
+    domain: com.apple.BluetoothAudioAgent,
+    key: "Apple Bitpool Min (editable)",
+    type: int,
+    value: 40,
+  }
+  # Key Repeat
+  - {
+    key: KeyRepeat,
+    type: int,
+    value: 0,
+  }
+  - {
+    key: InitialKeyRepeat,
+    type: int,
+    value: 10,
+  }
+  # Disable disk image verification
+  - {
+    domain: com.apple.frameworks.diskimages,
+    key: skip-verify,
+    value: true,
+  }
+  - {
+    domain: com.apple.frameworks.diskimages,
+    key: skip-verify-locked,
+    value: true,
+  }
+  - {
+    domain: com.apple.frameworks.diskimages,
+    key: skip-verify-remote,
+    value: true,
+  }
+  # Terminal
+  - {
+    domain: com.apple.terminal,
+    key: FocusFollowsMouse,
+    type: bool,
+    value: true,
+  }
+  - {
+    domain: org.x.X11,
+    key: wm_ffm,
+    type: bool,
+    value: true,
+  }
+  # Enable Secure Keyboard Entry in Terminal.app
+  - {
+    domain: com.apple.terminal,
+    key: SecureKeyboardEntry,
+    type: bool,
+    value: true,
+  }
+  # Don’t display the annoying prompt when quitting iTerm
+  - {
+    domain: com.googlecode.iterm2,
+    key: PromptOnQuit,
+    value: false,
+  }
+  # Ativity Monitor
+  # Show all processes in Activity Monitor
+  - {
+    domain: com.apple.ActivityMonitor,
+    key: ShowCategory,
+    type: int,
+    value: 0,
+  }
+  # Mac App Store
+  # Enable the automatic update check
+  - {
+    domain: com.apple.SoftwareUpdate,
+    key: AutomaticCheckEnabled,
+    value: true,
+  }
+  # Check for software updates daily, not just once per week
+  - {
+    domain: com.apple.SoftwareUpdate,
+    key: ScheduleFrequency,
+    type: int,
+    value: 1,
+  }
+  # Download newly available updates in background
+  - {
+    domain: com.apple.SoftwareUpdate,
+    key: AutomaticDownload,
+    type: int,
+    value: 1,
+  }
+  # Install System data files & security updates
+  - {
+    domain: com.apple.SoftwareUpdate,
+    key: CriticalUpdateInstall,
+    type: int,
+    value: 1,
+  }
+  # Turn on app auto-update
+  - {
+    domain: com.apple.SoftwareUpdate,
+    key: AutoUpdateRestartRequired,
+    value: true,
+  }
+  
+  # Chrome
+  # Use the system-native print preview dialog
+  - {
+    domain: com.google.Chrome,
+    key: DisablePrintPreview,
+    value: true,
+  }
+  # Expand the print dialog by default
+  - {
+    domain: com.google.Chrome,
+    key: PMPrintingExpandedStateForPrint2,
+    value: true,
+  }
+  # Keyboard
+  # enable function keys
+  - {
+    domain: com.apple.keyboard,
+    key: fnState,
+    type: int,
+    value: 1,
   }

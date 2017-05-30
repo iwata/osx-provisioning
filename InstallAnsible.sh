@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eux
 
 which pip >/dev/null 2>&1
 if [ $? -ne 0 ];
@@ -7,6 +8,8 @@ then
   echo "install pip"
   sudo easy_install pip
 fi
+
+sudo pip install --upgrade pip
 
 which ansible >/dev/null 2>&1
 if [ $? -ne 0 ];

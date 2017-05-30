@@ -1,14 +1,14 @@
 - name: confirm whether installed ruby or not
   register: result
   ignore_errors: True
-  shell: rbenv versions |grep {{ ruby_version }}
+  shell: rbenv versions |grep "{{ ruby_version }}"
 
 - name: install ruby
-  shell: rbenv install {{ ruby_version }}
+  shell: rbenv install "{{ ruby_version }}"
   when: result|failed
 
 - name: set global ruby version
-  shell: rbenv global {{ ruby_version }}
+  shell: rbenv global "{{ ruby_version }}"
   when: result|failed
 
 - name: update gem
@@ -16,8 +16,8 @@
 
 - name: install gem modules
   gem:
-    name={{ item.name | default(item) }}
-    state={{ item.state | default('present') }}
-    version={{ item.version | default('') }}
-  with_items: gem_modules
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+    version: "{{ item.version | default('') }}"
+  with_items: "{{ gem_modules }}"
   when: gem_modules

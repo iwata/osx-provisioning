@@ -1,2 +1,4 @@
 *.swp
+*.retry
 .DS_Store
+.secret.yml

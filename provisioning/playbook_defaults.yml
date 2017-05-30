@@ -4,4 +4,4 @@
   roles:
     # Configurations
     - defaults
-    - apply_defaults
+    - gatekeeper

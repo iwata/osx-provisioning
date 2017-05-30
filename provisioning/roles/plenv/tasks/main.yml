@@ -1,14 +1,14 @@
 - name: confirm whether installed perl or not
   register: result
   ignore_errors: True
-  shell: plenv versions |grep {{ perl_version }}
+  shell: plenv versions |grep "{{ perl_version }}"
 
 - name: install perl
-  shell: plenv install {{ perl_version }}
+  shell: plenv install "{{ perl_version }}"
   when: result|failed
 
 - name: set global perl version
-  shell: plenv global {{ perl_version }}
+  shell: plenv global "{{ perl_version }}"
   when: result|failed
 
 - name: rehash
@@ -27,8 +27,8 @@
 
 - name: install outdated modules
   cpanm:
-    name={{ item }}
-    notest=1
+    name: "{{ item }}"
+    notest: True
   when: cpanm_result|failed
   with_items:
     - "local::lib"
@@ -44,7 +44,7 @@
 
 - name: install cpan modules
   cpanm:
-    name={{ item }}
+    name: "{{ item }}"
   with_items:
     - "Vi::QuickFix"
     - Carton
@@ -54,4 +54,3 @@
 
 - name: finally rehash
   shell: plenv rehash
-

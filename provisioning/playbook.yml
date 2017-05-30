@@ -1,23 +1,6 @@
 ---
-- name: OSX Local Provisioner
+- name: About brew
   hosts: localhost
-  vars:
-    ricty_version: 3.2.4
-    ansible2_version: v2.0.0-0.9.rc4
-  #pre_tasks:
-  #- stat: path=~/.ssh
-  #register: ssh
   roles:
-    # App Installations
-    #- brew
-    #- brew-cask
-
-    # Configurations
-    #- dotfiles
-    #- zsh
-    #- ssh
-  tasks:
-    - name: download Dyazo
-      get_url: url=http://dyazo.mbga.local/apps/Dyazo.tar.gz dest=/tmp/
-    - name: install Dyazo
-      unarchive: src=/tmp/Dyazo.tar.gz dest={{ ansible_env.HOME }}/Applications
+    - brew
+    - brew-cask

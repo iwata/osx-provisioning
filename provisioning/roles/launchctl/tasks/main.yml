@@ -1,0 +1,22 @@
+---
+- name: Include secret vars
+  include_vars: .secret.yml
+
+# ref. https://sms-engineer.esa.io/posts/7898
+- name: Copy a property file
+  template:
+    src: GGSync.properties.j2
+    dest: "{{ ansible_user_dir }}/{{ ggsync_dir }}/GGSync.properties"
+
+- name: Copy plist files
+  template:
+    src: "local.{{ item }}.plist.j2"
+    dest: "{{ ansible_user_dir }}/Library/LaunchAgents/local.{{ item }}.plist"
+    mode: 0600
+  with_items: "{{ plist_files }}"
+  when: plist_files
+
+- name: load plist
+  shell: "launchctl load {{ ansible_user_dir }}/Library/LaunchAgents/local.{{ item }}.plist && launchctl start local.{{ item }}"
+  with_items: "{{ plist_files }}"
+  when: plist_files

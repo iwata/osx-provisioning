@@ -1,9 +1,19 @@
-- name:
+- name: apply defautls
   osx_defaults:
-    domain={{ item.domain|default('NSGlobalDomain') }}
-    key={{ item.key }}
-    type={{ item.type }}
-    value={% if item.value is sameas true %}true{% elif item.value is sameas false %}false{% else %}{{ item.value }}{% endif %}
-    state=present
-  with_items: mac_defaults_settings
+    domain: "{{ item.domain|default('NSGlobalDomain') }}"
+    key: "{{ item.key }}"
+    type: "{{ item.type|default('bool') }}"
+    value: "{{ item.value }}"
+    state: present
+  with_items: "{{ mac_defaults_settings }}"
   when: mac_defaults_settings
+- name: Only use UTF-8 in Terminal.app
+  osx_defaults:
+    domain: com.apple.terminal
+    key: StringEncodings
+    type: array
+    value:
+        - "4"
+
+- name: kill apps to apply default settings
+  command: bash -c 'for app in Finder Dock SystemUIServer; do killall "$app" >/dev/null 2>&1; done'

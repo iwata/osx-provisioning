@@ -1,12 +1,12 @@
 - name: confirm whether already installed or not
   register: result
   ignore_errors: True
-  shell: ls {{ ansible_env.HOME }}/Library/Fonts |grep Ricty
+  shell: ls "{{ ansible_user_dir }}"/Library/Fonts |grep Ricty
 
 - name: install fonts
-  command: bash -c "cp -f $(brew --cellar ricty)/{{ ricty_version }}/share/fonts/Ricty*.ttf {{ ansible_env.HOME }}/Library/Fonts"
+  command: bash -c "cp -f $(brew --prefix ricty)/share/fonts/Ricty*.ttf {{ ansible_user_dir }}/Library/Fonts"
   when: result|failed
 
-- name: clear cache
+- name: clear font cache
   command: fc-cache -vf
   when: result|failed

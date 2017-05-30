@@ -1,12 +1,12 @@
 - name: check go modules status
-  command: go list {{ item }}
+  command: go list "{{ item }}"
   register: go_module
   failed_when: go_module.rc not in [0, 1]
   changed_when: go_module.rc not in [0, 1]
   when: modules
-  with_items: modules
+  with_items: "{{ modules }}"
 
 - name: install go modules
-  command: go get {{ item.item }}
+  command: go get "{{ item.item }}"
   when: item.rc == 1
-  with_items: go_module.results
+  with_items: "{{ go_module.results }}"

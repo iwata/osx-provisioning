@@ -1,14 +1,8 @@
 ---
-- name: OSX Local Provisioner to install ll
+- name: OSX Local Provisioner to install LL
   hosts: localhost
-  vars:
-    ruby_version: 2.4.0
-    perl_version: 5.24.1
-    #python_version: 2.7.11
-    python_version: 3.6.1
-    node_version: v7.7.4
   roles:
-    #- rbenv
-    #- pyenv
-    #- plenv
-    - nodebrew
+    - rbenv
+    - pyenv
+    - plenv
+    - npm
