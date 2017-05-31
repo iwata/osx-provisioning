@@ -214,12 +214,12 @@ mac_defaults_settings:
   - {
     key: InitialKeyRepeat,
     type: int,
-    value: 10,
+    value: 15,
   }
   - {
     key: KeyRepeat,
     type: int,
-    value: 1,
+    value: 5,
   }
   - {
     key: com.apple.trackpad.scaling,

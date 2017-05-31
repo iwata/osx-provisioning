@@ -12,6 +12,7 @@ homebrew_cask_packages:
   - kensington-trackball-works
   - launchrocket
   - mailplane
+  - popclip
   - skitch
   - skype-for-business
   - slack
