@@ -1,9 +1,9 @@
-- name: confirm whether installed python or not
+- name: confirm whether installed python2 or not
   register: result2
   ignore_errors: True
   shell: pyenv versions |grep "{{ python_version2 }}"
 
-- name: install python
+- name: install python2
   environment:
     #PYTHON_CONFIGURE_OPTS: "--enable-shared"
     LDFLAGS: "-L/usr/local/opt/zlib/lib"
@@ -14,8 +14,12 @@
   shell: pyenv install "{{ python_version2 }}"
   when: result2|failed
 
-- name: set global python version
-  shell: pyenv global "{{ python_version2 }}"
+- name: virtualenv as neovim2
+  shell: pyenv virtualenv "{{ python_version2 }}" neovim2
+  when: result2|failed
+
+- name: activate neovim2
+  shell: pyenv activate neovim2; pyenv rehash
   when: result2|failed
 
 - name: upgrade pip
@@ -29,10 +33,7 @@
   with_items: "{{ pip_modules }}"
   when: pip_modules
 
-- name: virtualenv for neovim
-  shell: pyenv virtualenv "{{ python_version2 }}" neovim2
-
-- name: confirm whether installed python or not
+- name: confirm whether installed python3 or not
   register: result3
   ignore_errors: True
   shell: pyenv versions |grep "{{ python_version3 }}"
@@ -48,8 +49,12 @@
   shell: pyenv install "{{ python_version3 }}"
   when: result3|failed
 
-- name: set global python version
-  shell: pyenv global "{{ python_version3 }}"; pyenv rehash
+- name: virtualenv for neovim
+  shell: pyenv virtualenv "{{ python_version3 }}" neovim3
+  when: result3|failed
+
+- name: activate neovim3
+  shell: pyenv activate neovim3; pyenv rehash
   when: result3|failed
 
 - name: upgrade pip
@@ -62,10 +67,4 @@
     state: "{{ item.state | default('present') }}"
   with_items: "{{ pip_modules }}"
   when: pip_modules
-
-- name: virtualenv for neovim
-  shell: pyenv virtualenv "{{ python_version3 }}" neovim3
-
-- name: activate virtualenv
-  shell: pyenv activate neovim3
 

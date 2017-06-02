@@ -1,10 +1,11 @@
 ---
 #ansible2_version: v2.3.0.0-1
 ruby_version: 2.4.1
-perl_version: 5.24.1
+perl_version: 5.26.0
 python_version2: 2.7.13
 python_version3: 3.6.1
 node_version: 6.10.3
+#node_version: 8.0.0
 # for GGSync
 ggsync_dir: Dropbox/GGSync
 ggsync_service_id: ggsync@bright-practice-168500.iam.gserviceaccount.com

@@ -1,6 +1,5 @@
 ---
 homebrew_repositories:
-#  - tldr-pages/tldr
   - argon/mas
   - sanemat/font
   - caskroom/cask
@@ -20,7 +19,6 @@ homebrew_packages:
   - docker
   - docker-machine
   - docker-machine-driver-xhyve
-  #- elasticsearch17
   - exiftool
   - fish
   - fontforge
@@ -43,6 +41,7 @@ homebrew_packages:
     install_options: with-default-names
   - hadolint
   - hub
+  - iproute2mac
   - jo
   - jq
   - jvgrep
@@ -53,8 +52,6 @@ homebrew_packages:
     install_options: with-lua,with-luajit,with-python3,with-tcl
   - lv
   - neovim
-  - nodebrew
-  - peco
   - perl-build
   - plantuml
   - plenv
@@ -65,11 +62,11 @@ homebrew_packages:
   - reattach-to-user-namespace
   - name: ricty
     install_options: powerline,vim-powerline
+  - ripgrep
   - thefuck
   - tig
   - tmux
   - tree
-#  - tldr
   - shared-mime-info
   - source-highlight
   - ssh-copy-id

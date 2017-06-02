@@ -3,6 +3,7 @@ gem_modules:
   - bundler
   - git-browse-remote
   - google-ime-skk
+  - neovim
   - rake
   #- terminal-notifier
   - rcodetools
