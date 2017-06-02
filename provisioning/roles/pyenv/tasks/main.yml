@@ -14,24 +14,19 @@
   shell: pyenv install "{{ python_version2 }}"
   when: result2|failed
 
-- name: virtualenv as neovim2
-  shell: pyenv virtualenv "{{ python_version2 }}" neovim2
-  when: result2|failed
-
-- name: activate neovim2
-  shell: pyenv activate neovim2; pyenv rehash
+- name: use python2
+  shell: pyenv global "{{ python_version2 }}"
   when: result2|failed
 
 - name: upgrade pip
   shell: pip install --upgrade pip
-  when: result2|failed
 
 - name: install pip modules
   pip:
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
   with_items: "{{ pip_modules }}"
-  when: pip_modules
+
 
 - name: confirm whether installed python3 or not
   register: result3
@@ -49,22 +44,16 @@
   shell: pyenv install "{{ python_version3 }}"
   when: result3|failed
 
-- name: virtualenv for neovim
-  shell: pyenv virtualenv "{{ python_version3 }}" neovim3
-  when: result3|failed
-
-- name: activate neovim3
-  shell: pyenv activate neovim3; pyenv rehash
+- name: use python3
+  shell: pyenv global "{{ python_version3 }}"
   when: result3|failed
 
 - name: upgrade pip
   shell: pip install --upgrade pip
-  when: result3|failed
 
 - name: install pip modules
   pip:
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
   with_items: "{{ pip_modules }}"
-  when: pip_modules
 
