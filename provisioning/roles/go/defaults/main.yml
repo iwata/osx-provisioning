@@ -5,4 +5,5 @@ modules:
   - github.com/mattn/files
   - github.com/sonots/lltsv
   - github.com/davecheney/httpstat
+  - github.com/golang/dep/cmd/dep
   #- github.com/kohkimakimoto/essh

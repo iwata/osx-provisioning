@@ -8,3 +8,4 @@ gem_modules:
   #- terminal-notifier
   - rcodetools
   - fastri
+  - sqlint

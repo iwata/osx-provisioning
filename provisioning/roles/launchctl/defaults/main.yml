@@ -1,4 +1,5 @@
 ---
 plist_files:
+  - dakoku
   - ggsync
   - google-ime-skk

@@ -17,8 +17,11 @@
     - htmlhint
     - jsctags
     - jsonlint
+    - node-google-apps-script
     - npm@5
     - pretty-diff
+    - prettier-eslint
     - stylelint
     - tslint
+    - webpack
     - yarn

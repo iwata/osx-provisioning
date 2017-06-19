@@ -4,7 +4,9 @@ homebrew_repositories:
   - sanemat/font
   - caskroom/cask
   - caskroom/drivers
+  - itchyny/fillin
   - neovim/neovim
+  - universal-ctags/universal-ctags
 
 homebrew_packages:
   - autojump
@@ -16,10 +18,12 @@ homebrew_packages:
   - coreutils
   - ctags
   - curl
+  - direnv
   - docker
   - docker-machine
   - docker-machine-driver-xhyve
   - exiftool
+  - fillin
   - fish
   - fontforge
   - name: findutils
@@ -67,6 +71,7 @@ homebrew_packages:
   - tig
   - tmux
   - tree
+  - universal-ctags
   - shared-mime-info
   - source-highlight
   - ssh-copy-id

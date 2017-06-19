@@ -4,7 +4,7 @@ homebrew_cask_packages:
   - aquaskk
   - choosy
   - dash
-  #- flux
+  - flux
   - gas-mask
   - google-chrome
   - iterm2
@@ -12,6 +12,7 @@ homebrew_cask_packages:
   - kensington-trackball-works
   - launchrocket
   - mailplane
+  - ngrok
   - popclip
   - skitch
   - skype-for-business
