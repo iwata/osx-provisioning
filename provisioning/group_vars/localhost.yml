@@ -11,3 +11,4 @@ ggsync_service_id: ggsync@bright-practice-168500.iam.gserviceaccount.com
 garoon_account: motonori-iwata
 calendar_id: bm-sms.jp_rqk9inhlj1qostkqf0c7no428k@group.calendar.google.com
 dk_team_spirit_dir: .go/src/github.com/iwata/dk-team-spirit
+denso_metrics_working_dir: .go/src/github.com/bm-sms/eng-promotion-office/issue67/denso-metrics

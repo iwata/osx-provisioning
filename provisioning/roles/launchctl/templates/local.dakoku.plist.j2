@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>local.dakoku</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>{{ ansible_user_dir }}/.config/fnm/bin/node</string>
+      <string>./bin/dk.js</string>
+      <string>--wifi</string>
+      <string>SMS-DEV</string>
+      <string>SMS-PUBLIC</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardErrorPath</key>
+    <string>/dev/null</string>
+    <key>StandardOutPath</key>
+    <string>/dev/null</string>
+    <key>WorkingDirectory</key>
+    <string>{{ ansible_user_dir }}/{{ dk_team_spirit_dir }}</string>
+    <key>WatchPaths</key>
+    <array>
+      <string>/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist</string>
+    </array>
+  </dict>
+</plist>

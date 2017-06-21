@@ -1,5 +1,6 @@
 ---
 plist_files:
   - dakoku
+  - denso-client-metrics
   - ggsync
   - google-ime-skk
