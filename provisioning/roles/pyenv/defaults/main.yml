@@ -11,3 +11,4 @@ pip_modules:
   - proselint
   - Pygments
   - thefuck
+  - yamllint

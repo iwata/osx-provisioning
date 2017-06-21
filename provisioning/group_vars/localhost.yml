@@ -1,14 +1,13 @@
 ---
-#ansible2_version: v2.3.0.0-1
+# ansible2_version: v2.3.0.0-1
 ruby_version: 2.4.1
 perl_version: 5.26.0
 python_version2: 2.7.13
 python_version3: 3.6.1
-node_version: 6.10.3
-#node_version: 8.0.0
+node_version: 8.1.2
 # for GGSync
 ggsync_dir: Dropbox/GGSync
 ggsync_service_id: ggsync@bright-practice-168500.iam.gserviceaccount.com
 garoon_account: motonori-iwata
 calendar_id: bm-sms.jp_rqk9inhlj1qostkqf0c7no428k@group.calendar.google.com
-dk_team_spirit_dir: .ghq/github.com/iwata/dk-team-spirit
+dk_team_spirit_dir: .go/src/github.com/iwata/dk-team-spirit
