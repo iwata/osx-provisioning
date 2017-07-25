@@ -1,17 +1,18 @@
+---
 - name: confirm whether installed python2 or not
   register: result2
-  ignore_errors: True
+  ignore_errors: "True"
   shell: pyenv versions |grep "{{ python_version2 }}"
 
 - name: install python2
   environment:
-    #PYTHON_CONFIGURE_OPTS: "--enable-shared"
-    LDFLAGS: "-L/usr/local/opt/zlib/lib"
-    CPPFLAGS: "-I/usr/local/opt/zlib/include"
+    # PYTHON_CONFIGURE_OPTS: "--enable-shared"
+    LDFLAGS: "-L/usr/local/opt/sqlite/lib -L/usr/local/opt/zlib/lib"
+    CPPFLAGS: "-I/usr/local/opt/sqlite/include -I/usr/local/opt/zlib/include"
     PYTHON_CONFIGURE_OPTS: "--enable-framework"
-    #LDSHARED: "clang -bundle"
-    #LDCXXSHARED: "clang++ -bundle"
-    #BLDSHARED: "clang -bundle -lpython2.7"
+    # LDSHARED: "clang -bundle"
+    # LDCXXSHARED: "clang++ -bundle"
+    # BLDSHARED: "clang -bundle -lpython2.7"
   shell: pyenv install "{{ python_version2 }}"
   when: result2|failed
 
@@ -31,19 +32,18 @@
 
 - name: confirm whether installed python3 or not
   register: result3
-  ignore_errors: True
+  ignore_errors: "True"
   shell: pyenv versions |grep "{{ python_version3 }}"
 
-- name: install python
+- name: install python3
   environment:
-    #PYTHON_CONFIGURE_OPTS: "--enable-shared"
-    LDFLAGS: "-L/usr/local/opt/zlib/lib"
-    CPPFLAGS: "-I/usr/local/opt/zlib/include"
+    # PYTHON_CONFIGURE_OPTS: "--enable-shared"
+    LDFLAGS: "-L/usr/local/opt/sqlite/lib -L/usr/local/opt/zlib/lib"
+    CPPFLAGS: "-I/usr/local/opt/sqlite/include -I/usr/local/opt/zlib/include"
     PYTHON_CONFIGURE_OPTS: "--enable-framework"
-    PYTHON_CONFIGURE_OPTS: "--enable-framework"
-    #LDSHARED: "clang -bundle"
-    #LDCXXSHARED: "clang++ -bundle"
-    #BLDSHARED: "clang -bundle -lpython3.6m"
+    # LDSHARED: "clang -bundle"
+    # LDCXXSHARED: "clang++ -bundle"
+    # BLDSHARED: "clang -bundle -lpython3.6m"
   shell: pyenv install "{{ python_version3 }}"
   when: result3|failed
 
@@ -62,4 +62,3 @@
 
 - name: install powerline for tmux
   shell: pip install git+git://github.com/Lokaltog/powerline
-

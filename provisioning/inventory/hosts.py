@@ -23,7 +23,8 @@ def main():
                     'ansible_java_path': '%s/bin/java' % java_home,
                     'ansible_google_ime_path': google_ime,
                     'ansible_user_dir': os.environ['HOME'],
-                    'ansible_user_id': os.environ['USER']
+                    'ansible_user_id': os.environ['USER'],
+                    'ansible_repos_dir': '%s/Dropbox/repos' % os.environ['HOME']
                     }
                 }
             }

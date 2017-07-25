@@ -4,6 +4,8 @@ homebrew_repositories:
   - sanemat/font
   - caskroom/cask
   - caskroom/drivers
+  - caskroom/fonts
+  - codekitchen/dinghy
   - itchyny/fillin
   - neovim/neovim
   - universal-ctags/universal-ctags
@@ -18,8 +20,10 @@ homebrew_packages:
   - coreutils
   - ctags
   - curl
+  - dinghy
   - direnv
   - docker
+  - docker-compose
   - docker-machine
   - docker-machine-driver-xhyve
   - exiftool
@@ -73,6 +77,7 @@ homebrew_packages:
   - tree
   - universal-ctags
   - shared-mime-info
+  - sleepwatcher
   - source-highlight
   - ssh-copy-id
   - sshrc

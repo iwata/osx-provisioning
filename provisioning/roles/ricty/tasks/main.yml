@@ -1,10 +1,32 @@
 - name: confirm whether already installed or not
   register: result
   ignore_errors: True
-  shell: ls "{{ ansible_user_dir }}"/Library/Fonts |grep Ricty
+  shell: ls "{{ ansible_user_dir }}"/Library/Fonts |grep Nerd
 
 - name: install fonts
   command: bash -c "cp -f $(brew --prefix ricty)/share/fonts/Ricty*.ttf {{ ansible_user_dir }}/Library/Fonts"
+  when: result|failed
+
+- name: clone nerd-fonts
+  git:
+    repo: https://github.com/ryanoasis/nerd-fonts
+    dest: "{{ ansible_repos_dir }}"
+    update: no
+  when: result|failed
+- name: add permission
+  file:
+    path: "{{ ansible_repos_dir }}/nerd-fonts/font-patcher"
+    mode: "u+x"
+  when: result|failed
+- name: font patch
+  command: bash -c "cd {{ ansible_repos_dir }}/nerd-fonts; fontforge -script ./font-patcher {{ ansible_user_dir }}/Library/Fonts/Ricty\\ Regular\\ for\\ Powerline.ttf --fontawesome --fontlinux --oct
+icons --pomicons --powerline --powerlineextra"
+  when: result|failed
+- name: copy patched font
+  file:
+    src: "{{ ansible_repos_dir }}/nerd-fonts/Ricty\\ Regular\\ for\\ Powerline\\ Nerd\\ Font\\ Plus\\ Font\\ Awesome\\ Plus\\ Octicons\\ Plus\\ Pomicons\\ Plus\\ Font\\ Linux.ttf"
+    dest: "{{ ansible_user_idr }}/Library/Fonts"
+    state: file
   when: result|failed
 
 - name: clear font cache

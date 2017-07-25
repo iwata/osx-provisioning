@@ -56,3 +56,16 @@
 
 - name: linkapps
   command: brew linkapps
+
+- name: capure xhyve path
+  register: xhyve_path
+  shell: brew --prefix docker-machine-driver-xhyve
+- name: chown root to driver xhyve
+  file:
+    path: "{{ xhyve_path }}/bin/docker-machine-driver-xhyve"
+    owner: root
+    group: wheel
+- name: chmod driver xhyve
+  file:
+    path: "{{ xhyve_path.stdout }}/bin/docker-machine-driver-xhyve"
+    mode: "u+s"

@@ -5,6 +5,7 @@ homebrew_cask_packages:
   - choosy
   - dash
   - flux
+  - font = hack-nerd-font
   - gas-mask
   - google-chrome
   - iterm2

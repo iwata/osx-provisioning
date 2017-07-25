@@ -1,9 +1,13 @@
 ---
 modules:
+  - github.com/golang/dep/cmd/dep
+  - github.com/d4l3k/go-pry
+  - github.com/davecheney/httpstat
+  - github.com/derekparker/delve/cmd/dlv
+  - github.com/fatih/gomodifytags
   - github.com/koron/gomigemo/cmd/gmigemo
+  - github.com/kyoh86/richgo
   - github.com/mattn/mkup
   - github.com/mattn/files
   - github.com/sonots/lltsv
-  - github.com/davecheney/httpstat
-  - github.com/golang/dep/cmd/dep
-  #- github.com/kohkimakimoto/essh
+  - gopkg.in/alecthomas/gometalinter.v1
