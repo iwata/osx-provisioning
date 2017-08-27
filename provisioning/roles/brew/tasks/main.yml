@@ -69,3 +69,6 @@
   file:
     path: "{{ xhyve_path.stdout }}/bin/docker-machine-driver-xhyve"
     mode: "u+s"
+
+- name: start docker-machine service
+  shell: brew services start docker-machine

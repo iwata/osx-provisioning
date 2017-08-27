@@ -5,6 +5,7 @@ pip_modules:
   - 'aws-shell'
   - flake8
   - httpie
+  - httpstat
   - neovim
   - nose
   - psutil

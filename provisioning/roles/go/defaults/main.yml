@@ -1,5 +1,6 @@
 ---
 modules:
+  - github.com/codegangsta/gin
   - github.com/golang/dep/cmd/dep
   - github.com/d4l3k/go-pry
   - github.com/davecheney/httpstat

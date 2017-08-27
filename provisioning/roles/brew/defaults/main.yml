@@ -1,6 +1,7 @@
 ---
 homebrew_repositories:
   - argon/mas
+  - boz/repo
   - sanemat/font
   - caskroom/cask
   - caskroom/drivers
@@ -11,10 +12,12 @@ homebrew_repositories:
   - universal-ctags/universal-ctags
 
 homebrew_packages:
+  - amazon-ecs-cli
   - autojump
   - autossh
   - awscli
-  - mas
+  #- mas
+  - ccze
   - cmigemo
   - colordiff
   - coreutils
@@ -53,6 +56,7 @@ homebrew_packages:
   - jo
   - jq
   - jvgrep
+  - kail
   - keychain
   - name: macvim
     install_options: with-lua,with-luajit,with-python3
@@ -64,6 +68,7 @@ homebrew_packages:
   - plantuml
   - plenv
   - pstree
+  - pv
   - pyenv
   - pyenv-virtualenv
   - rbenv
