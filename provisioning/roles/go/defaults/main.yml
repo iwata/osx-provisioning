@@ -1,14 +1,24 @@
 ---
 modules:
+  - github.com/cespare/reflex
   - github.com/codegangsta/gin
-  - github.com/golang/dep/cmd/dep
-  - github.com/d4l3k/go-pry
   - github.com/davecheney/httpstat
   - github.com/derekparker/delve/cmd/dlv
   - github.com/fatih/gomodifytags
+  - github.com/gokcehan/lf
+  - github.com/golang/dep/cmd/dep
+  - github.com/k0kubun/pp
   - github.com/koron/gomigemo/cmd/gmigemo
   - github.com/kyoh86/richgo
   - github.com/mattn/mkup
   - github.com/mattn/files
+  - github.com/motemen/gore
+  - github.com/mdempsky/gocode
+  - github.com/Songmu/ghg/cmd/ghg
   - github.com/sonots/lltsv
+  - github.com/sourcegraph/go-langserver
+  - github.com/pocke/whichpr
+  - golang.org/x/tools/cmd/godoc
   - gopkg.in/alecthomas/gometalinter.v1
+  - google.golang.org/appengine
+  - mvdan.cc/sh/cmd/shfmt

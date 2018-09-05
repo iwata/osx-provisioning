@@ -2,24 +2,25 @@ homebrew_cask_packages:
   #- 1password
   - alfred
   - aquaskk
+  - captain
   - choosy
+  - clipy
   - dash
   - flux
-  - font = hack-nerd-font
+  - font-hack-nerd-font
   - gas-mask
   - google-chrome
+  - insomnia
   - iterm2
   - hammerspoon
   - kensington-trackball-works
   - launchrocket
   - mailplane
+  - mark-text
   - ngrok
+  - postman
   - popclip
   - skitch
-  - skype-for-business
   - slack
-  - thunderbird
-  - vagrant
-  - vanilla
-  - virtualbox
+  - visual-studio-code
   - windownaut

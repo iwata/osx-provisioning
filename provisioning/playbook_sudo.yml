@@ -1,0 +1,12 @@
+---
+- name: for fish
+  hosts: localhost
+  roles:
+    - fish
+    - gatekeeper
+  tasks:
+    - name: symlink Alacritty.app
+      file:
+        src: /usr/local/opt/alacritty/Applications/Alacritty.app
+        dest: /Applications/Alacritty.app
+        state: link

@@ -1,0 +1,33 @@
+---
+- name: upgrade npm
+  shell: npm install -g npm
+- name: install npm modules into system node
+  npm:
+    name: "{{ item }}"
+    global: yes
+  with_items: "{{ npm_modules }}"
+
+- name: nodenv init
+  shell: nodenv init
+  ignore_errors: "True"
+
+- name: confirm whether installed node8 or not
+  register: result
+  ignore_errors: True
+  shell: nodenv versions |grep "{{ node_version8 }}"
+
+- name: install node8
+  shell: nodenv install "{{ node_version8 }}" && nodenv global "{{ node_version8 }}"
+  when: result|failed
+
+- name: upgrade npm of node8
+  shell: npm install -g npm
+
+- name: install npm modules into node8
+  npm:
+    name: "{{ item }}"
+    global: yes
+  with_items: "{{ npm_modules }}"
+
+- name: use system node
+  shell: nodenv global system

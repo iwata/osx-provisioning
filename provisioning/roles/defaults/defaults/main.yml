@@ -98,7 +98,7 @@ mac_defaults_settings:
     type: string,
     value: "Nlsv",
   }
-  
+
   # Trackpad
 
   # Enable clicking by tap
@@ -152,7 +152,7 @@ mac_defaults_settings:
   - {
     domain: com.apple.dock,
     key: tilesize,
-    type: int,
+    type: float,
     value: 36,
   }
   - {
@@ -261,7 +261,7 @@ mac_defaults_settings:
     type: bool,
     value: true,
   }
-  
+
   # Safari
   - {
     domain: com.apple.Safari,
@@ -354,13 +354,13 @@ mac_defaults_settings:
     key: askForPassword,
     type: int,
     value: 1,
-  }  
+  }
   - {
     domain: com.apple.screensaver,
     key: askForPasswordDelay,
     type: float,
     value: 0,
-  }  
+  }
   # Always show scrollbars
   - {
     key: AppleShowScrollBars,
@@ -486,7 +486,7 @@ mac_defaults_settings:
     key: AutoUpdateRestartRequired,
     value: true,
   }
-  
+
   # Chrome
   # Use the system-native print preview dialog
   - {

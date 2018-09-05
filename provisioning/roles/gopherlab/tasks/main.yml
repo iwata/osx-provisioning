@@ -1,0 +1,32 @@
+---
+- name: install jupyter and readline
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - jupyter
+    - readline
+
+- name: install ZeroMQ
+  homebrew:
+    name: zeromq
+    state: latest
+
+- name: install gopherlab
+  command: go get -u github.com/fabian-z/gopherlab
+
+- name: create a directory for the new kernel config
+  file:
+    path: "{{ ansible_user_dir }}/Library/Jupyter/kernels/gopherlab/"
+    state: directory
+- name: copy the kernel config into the jupyter directory
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_user_dir }}/Library/Jupyter/kernels/gopherlab/"
+  with_fileglob:
+    - "{{ gopath }}/src/github.com/fabian-z/gopherlab/kernel/*"
+- name: fix path in kernel.json
+  replace:
+    path: "{{ ansible_user_dir }}/Library/Jupyter/kernels/gopherlab/kernel.json"
+    regexp: '/go/bin/gopherlab'
+    replace: "{{ gopath }}/bin/gopherlab"

@@ -1,3 +1,8 @@
+---
+- name: rbenv init
+  shell: rbenv init
+  ignore_errors: "True"
+
 - name: confirm whether installed ruby or not
   register: result
   ignore_errors: True
@@ -5,11 +10,11 @@
 
 - name: install ruby
   shell: rbenv install "{{ ruby_version }}"
-  when: result|failed
+  when: result is failed
 
 - name: set global ruby version
   shell: rbenv global "{{ ruby_version }}"
-  when: result|failed
+  when: result is failed
 
 - name: update gem
   shell: gem update --system; gem update

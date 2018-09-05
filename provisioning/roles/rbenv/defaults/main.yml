@@ -1,11 +1,17 @@
 ---
 gem_modules:
   - bundler
+  - colorls
+  - gem-ctags
+  - gem-browse
   - git-browse-remote
   - google-ime-skk
+  - haml-lint
   - neovim
   - rake
   #- terminal-notifier
   - rcodetools
   - fastri
   - sqlint
+  - rubocop
+  - refe2

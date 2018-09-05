@@ -4,5 +4,5 @@
   roles:
     - rbenv
     - pyenv
-    - plenv
-    - npm
+    #- plenv
+    - nodenv

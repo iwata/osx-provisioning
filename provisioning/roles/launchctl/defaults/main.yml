@@ -1,6 +1,4 @@
 ---
 plist_files:
-  - denso-client-metrics
-  - ggsync
   - google-ime-skk
   - sleepwatcher

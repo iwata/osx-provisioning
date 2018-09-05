@@ -2,37 +2,34 @@
 homebrew_repositories:
   - argon/mas
   - boz/repo
-  - sanemat/font
-  - caskroom/cask
-  - caskroom/drivers
-  - caskroom/fonts
-  - codekitchen/dinghy
+  - homebrew/cask-fonts
   - itchyny/fillin
+  - jesseduffield/lazygit
+  - mscharley/homebrew
   - neovim/neovim
   - universal-ctags/universal-ctags
 
 homebrew_packages:
+  - name: alacritty
+    install_options: HEAD,with-cache
   - amazon-ecs-cli
   - autojump
   - autossh
   - awscli
-  #- mas
+  - mas
   - ccze
   - cmigemo
   - colordiff
   - coreutils
-  - ctags
   - curl
-  - dinghy
   - direnv
   - docker
   - docker-compose
   - docker-machine
-  - docker-machine-driver-xhyve
+  - editorconfig
   - exiftool
   - fillin
   - fish
-  - fontforge
   - name: findutils
     install_options: with-default-names
   - fzf
@@ -53,34 +50,37 @@ homebrew_packages:
   - hadolint
   - hub
   - iproute2mac
+  - jid
   - jo
   - jq
   - jvgrep
   - kail
   - keychain
-  - name: macvim
-    install_options: with-lua,with-luajit,with-python3
+  - kubectx
   - name: vim
     install_options: with-lua,with-luajit,with-python3,with-tcl
+  - lazygit
   - lv
+  - mkcert
   - neovim
-  - perl-build
+  - node
+  - nodenv
+  - node-build
+  - nss
   - plantuml
-  - plenv
   - pstree
   - pv
   - pyenv
-  - pyenv-virtualenv
   - rbenv
+  - ruby-build
   - reattach-to-user-namespace
-  - name: ricty
-    install_options: powerline,vim-powerline
   - ripgrep
   - thefuck
   - tig
   - tmux
   - tree
-  - universal-ctags
+  - name: universal-ctags
+    state: head
   - shared-mime-info
   - sleepwatcher
   - source-highlight
@@ -91,5 +91,3 @@ homebrew_packages:
   - wdiff
   - zlib
   - zsh
-  - zsh-completions
-  - zsh-syntax-highlighting

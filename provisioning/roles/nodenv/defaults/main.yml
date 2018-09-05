@@ -1,0 +1,25 @@
+---
+npm_modules:
+  - commitizen
+  - cz-emoji
+  - docto
+  - firebase-tools
+  - gapps
+  - gh
+  - htmlhint
+  - javascript-typescript-langserver
+  - jsonlint
+  - instant-markdown-d
+  - mdr
+  - neovim
+  - ndb
+  - node-google-apps-script
+  - pretty-diff
+  - prettier-eslint
+  - stylelint
+  - textlint
+  - tslint
+  - typescript
+  - vmd
+  - vue-language-server
+  - yarn

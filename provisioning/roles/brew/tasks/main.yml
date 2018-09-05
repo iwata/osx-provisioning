@@ -11,21 +11,12 @@
   get_url:
     url: https://raw.githubusercontent.com/Homebrew/install/master/install
     dest: /tmp/brew_install
-  when: result|failed
+  when: result is failed
 
 - name: proceed brew installer
   command: >
     ruby /tmp/brew_install
-  when: result|failed
-
-- name: Change /usr/local owner to "{{ ansible_user_id }}"
-  become: true
-  become_method: sudo
-  file:
-    dest: /usr/local
-    owner: "{{ ansible_user_id }}"
-    group: admin
-    recurse: yes
+  when: result is failed
 
 #
 # install apps
@@ -53,22 +44,3 @@
     install_options: "{{ item.install_options | default('') }}"
   with_items: "{{ homebrew_packages }}"
   when: homebrew_packages
-
-- name: linkapps
-  command: brew linkapps
-
-- name: capure xhyve path
-  register: xhyve_path
-  shell: brew --prefix docker-machine-driver-xhyve
-- name: chown root to driver xhyve
-  file:
-    path: "{{ xhyve_path }}/bin/docker-machine-driver-xhyve"
-    owner: root
-    group: wheel
-- name: chmod driver xhyve
-  file:
-    path: "{{ xhyve_path.stdout }}/bin/docker-machine-driver-xhyve"
-    mode: "u+s"
-
-- name: start docker-machine service
-  shell: brew services start docker-machine

@@ -1,8 +1,10 @@
 ---
 - name: OSX Local Provisioner
   hosts: localhost
+  vars:
+    gopath: "{{ lookup('env', 'GOPATH') }}"
   roles:
-    - ricty
+    - cica
     - go
     - launchctl
   tasks:

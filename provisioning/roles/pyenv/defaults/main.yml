@@ -8,6 +8,7 @@ pip_modules:
   - httpstat
   - neovim
   - nose
+  - powerline-status
   - psutil
   - proselint
   - Pygments

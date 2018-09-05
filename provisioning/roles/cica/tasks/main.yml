@@ -1,0 +1,37 @@
+---
+- name: confirm whether already installed or not
+  register: result
+  ignore_errors: True
+  shell: ls "{{ ansible_user_dir }}"/Library/Fonts |grep Cica
+
+- name: git clone
+  git:
+    repo: https://github.com/miiton/Cica.git
+    dest: "{{ ansible_repos_dir }}/cica"
+    update: no
+  when: result is failed
+
+- name: confirm whether already installed or not
+  register: result2
+  ignore_errors: True
+  shell: ls "{{ ansible_repos_dir }}"/cica/dist |grep Cica
+  when: result is failed
+
+- name: docker compose
+  command: bash -c "cd {{ ansible_repos_dir }}/cica; docker-compose up && docker-compose down"
+  when: result2 is failed
+
+- name: copy fonts
+  copy:
+    src: "{{ ansible_repos_dir }}/cica/dist/Cica-{{ item }}.ttf"
+    dest: "{{ ansible_user_dir }}/Library/Fonts/Cica-{{ item }}.ttf"
+  with_items:
+    - Bold
+    - BoldItalic
+    - Regular
+    - RegularItalic
+  when: result is failed
+
+- name: clear font cache
+  command: fc-cache -vf
+  when: result is failed
