@@ -61,8 +61,10 @@ homebrew_packages:
     install_options: with-lua,with-luajit,with-python3,with-tcl
   - lazygit
   - lv
+  - luarocks
   - mkcert
-  - neovim
+  - name: neovim
+    state: head
   - node
   - nodenv
   - node-build
