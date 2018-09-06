@@ -1,5 +1,4 @@
 homebrew_cask_packages:
-  #- 1password
   - alfred
   - aquaskk
   - captain
@@ -9,7 +8,6 @@ homebrew_cask_packages:
   - flux
   - font-hack-nerd-font
   - gas-mask
-  - google-chrome
   - insomnia
   - iterm2
   - hammerspoon

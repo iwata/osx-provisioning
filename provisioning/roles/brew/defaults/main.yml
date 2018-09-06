@@ -67,6 +67,7 @@ homebrew_packages:
   - nodenv
   - node-build
   - nss
+  - peco
   - plantuml
   - pstree
   - pv
