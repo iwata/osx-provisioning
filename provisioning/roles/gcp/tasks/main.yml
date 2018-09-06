@@ -1,0 +1,22 @@
+---
+- name: gcloud
+  register: result
+  ignore_errors: True
+  command: >
+    gcloud help
+- name: Download SDK
+  get_url:
+    url: "{{ gcp_sdk }}"
+    dest: /tmp/gcp-sdk.tar.gz
+  when: result is failed
+- name: Extract SDK
+  unarchive:
+    src: /tmp/gcp-sdk.tar.gz
+    dest: /usr/local
+  when: result is failed
+  become: true
+  become_method: sudo
+- name: Remove a downloaded file
+  file:
+    path: /tmp/gcp-sdk.tar.gz
+    state: absent

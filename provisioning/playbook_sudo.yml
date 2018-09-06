@@ -4,6 +4,7 @@
   roles:
     - fish
     - gatekeeper
+    - gcp
   tasks:
     - name: symlink Alacritty.app
       file:
