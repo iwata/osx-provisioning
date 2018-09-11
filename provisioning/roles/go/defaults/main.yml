@@ -1,5 +1,6 @@
 ---
 modules:
+  - github.com/atotto/clipboard
   - github.com/cespare/reflex
   - github.com/codegangsta/gin
   - github.com/davecheney/httpstat

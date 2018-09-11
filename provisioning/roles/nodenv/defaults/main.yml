@@ -15,11 +15,8 @@ npm_modules:
   - ndb
   - node-google-apps-script
   - pretty-diff
-  - prettier-eslint
-  - stylelint
-  - textlint
-  - tslint
   - typescript
   - vmd
+  - vue
   - vue-language-server
   - yarn

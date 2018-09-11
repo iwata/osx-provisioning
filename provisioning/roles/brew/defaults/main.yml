@@ -16,18 +16,20 @@ homebrew_packages:
   - autojump
   - autossh
   - awscli
-  - mas
+  - bat
   - ccze
   - cmigemo
   - colordiff
   - coreutils
   - curl
+  - diff-so-fancy
   - direnv
   - docker
   - docker-compose
   - docker-machine
   - editorconfig
   - exiftool
+  - fd
   - fillin
   - fish
   - name: findutils
@@ -48,6 +50,7 @@ homebrew_packages:
   - name: grep
     install_options: with-default-names
   - hadolint
+  - htop
   - hub
   - iproute2mac
   - jid
@@ -62,7 +65,9 @@ homebrew_packages:
   - lazygit
   - lv
   - luarocks
+  - mas
   - mkcert
+  - ncdu
   - name: neovim
     state: head
   - node
@@ -71,6 +76,7 @@ homebrew_packages:
   - nss
   - peco
   - plantuml
+  - prettyping
   - pstree
   - pv
   - pyenv
@@ -80,6 +86,7 @@ homebrew_packages:
   - ripgrep
   - thefuck
   - tig
+  - tldr
   - tmux
   - tree
   - name: universal-ctags
