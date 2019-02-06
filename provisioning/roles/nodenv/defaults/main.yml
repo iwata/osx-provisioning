@@ -1,13 +1,13 @@
 ---
 npm_modules:
-  - commitizen
-  - cz-emoji
+  - '@vue/cli'
+  - dockerfile-language-server-nodejs
   - docto
   - firebase-tools
   - gapps
   - gh
+  - gitmoji-cli
   - htmlhint
-  - javascript-typescript-langserver
   - jsonlint
   - instant-markdown-d
   - mdr
@@ -16,7 +16,8 @@ npm_modules:
   - node-google-apps-script
   - pretty-diff
   - typescript
+  - typescript-language-server
   - vmd
-  - vue
+  - vscode-html-languageserver-bin
   - vue-language-server
   - yarn

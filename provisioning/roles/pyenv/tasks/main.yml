@@ -31,10 +31,7 @@
 
 - name: install pip modules
   pip:
-    name: "{{ item.name | default(item) }}"
-    state: "{{ item.state | default('present') }}"
-  with_items: "{{ pip_modules }}"
-
+    name: "{{ pip_modules }}"
 
 - name: confirm whether installed python3 or not
   register: result3
@@ -64,10 +61,8 @@
 
 - name: install pip3 modules
   pip:
-    name: "{{ item.name | default(item) }}"
-    state: "{{ item.state | default('present') }}"
+    name: "{{ pip_modules }}"
     executable: pip3
-  with_items: "{{ pip_modules }}"
 
 #- name: install powerline for tmux
   # shell: pip install git+git://github.com/Lokaltog/powerline

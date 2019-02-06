@@ -1,5 +1,6 @@
 ---
 modules:
+  - github.com/766b/go-outliner
   - github.com/atotto/clipboard
   - github.com/cespare/reflex
   - github.com/codegangsta/gin
@@ -11,15 +12,20 @@ modules:
   - github.com/k0kubun/pp
   - github.com/koron/gomigemo/cmd/gmigemo
   - github.com/kyoh86/richgo
+  - github.com/monochromegane/dragon-imports/cmd/dragon-imports
   - github.com/mattn/mkup
   - github.com/mattn/files
   - github.com/motemen/gore
-  - github.com/mdempsky/gocode
+  - github.com/oxequa/realize
+  - github.com/saibing/bingo
   - github.com/Songmu/ghg/cmd/ghg
   - github.com/sonots/lltsv
-  - github.com/sourcegraph/go-langserver
   - github.com/pocke/whichpr
+  - github.com/pwaller/goimports-update-ignore
+  - golang.org/x/tools/cmd/eg
   - golang.org/x/tools/cmd/godoc
+  - golang.org/x/tools/cmd/gopls
+  - golang.org/x/tools/cmd/gomvpkg
   - gopkg.in/alecthomas/gometalinter.v1
   - google.golang.org/appengine
   - mvdan.cc/sh/cmd/shfmt

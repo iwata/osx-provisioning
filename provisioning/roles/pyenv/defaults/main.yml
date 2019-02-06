@@ -1,8 +1,8 @@
 ---
 pip_modules:
   - ansible
-  - 'ansible-lint'
-  - 'aws-shell'
+  - ansible-lint
+  - aws-shell
   - flake8
   - httpie
   - httpstat
@@ -12,5 +12,6 @@ pip_modules:
   - psutil
   - proselint
   - Pygments
+  - python-language-server
   - thefuck
   - yamllint

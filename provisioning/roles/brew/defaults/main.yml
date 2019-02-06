@@ -2,16 +2,16 @@
 homebrew_repositories:
   - argon/mas
   - boz/repo
+  - derailed/k9s
   - homebrew/cask-fonts
   - itchyny/fillin
   - jesseduffield/lazygit
   - mscharley/homebrew
   - neovim/neovim
   - universal-ctags/universal-ctags
+  - wata727/tflint
 
 homebrew_packages:
-  - name: alacritty
-    install_options: HEAD,with-cache
   - amazon-ecs-cli
   - autojump
   - autossh
@@ -46,6 +46,7 @@ homebrew_packages:
   - name: gnu-sed
     install_options: with-default-names
   - go
+  - golangci/tap/golangci-lint
   - grc
   - name: grep
     install_options: with-default-names
@@ -57,11 +58,12 @@ homebrew_packages:
   - jo
   - jq
   - jvgrep
+  - k9s
   - kail
   - keychain
   - kubectx
   - name: vim
-    install_options: with-lua,with-luajit,with-python3,with-tcl
+    install_options: with-luajit,with-python3,with-tcl
   - lazygit
   - lv
   - luarocks
@@ -84,8 +86,10 @@ homebrew_packages:
   - ruby-build
   - reattach-to-user-namespace
   - ripgrep
+  - terraform
   - thefuck
   - tig
+  - tflint
   - tldr
   - tmux
   - tree

@@ -10,3 +10,8 @@
   command: go get "{{ item.item }}"
   when: item.rc == 1
   with_items: "{{ go_module.results }}"
+  environment:
+    GO111MODULE: "off"
+
+- name: dragon-imports
+  command: dragon-imports

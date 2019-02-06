@@ -1,10 +1,11 @@
 ---
 # ansible2_version: v2.3.0.0-1
-ruby_version: 2.5.0
-perl_version: 5.26.0
+ruby_version: 2.6.1
+perl_version: 5.28.1
 python_version2: 2.7.15
-python_version3: 3.7.0
-node_version8: 8.11.4
+python_version3: 3.7.2
+node_version8: 8.15.0
+node_version10: 10.15.1
 
 dk_team_spirit_dir: .go/src/github.com/iwata/dk-team-spirit
 gcp_sdk: https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-215.0.0-darwin-x86_64.tar.gz

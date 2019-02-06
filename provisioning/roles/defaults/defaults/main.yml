@@ -513,3 +513,15 @@ mac_defaults_settings:
     type: string,
     value: Dark,
   }
+  - {
+    domain: com.apple.CrashReporter,
+    key: UseUNC,
+    type: int,
+    value: 1,
+  }
+  # Font Smooth for Mojave
+  - {
+    key: CGFontRenderingFontSmoothingDisabled,
+    type: bool,
+    value: false,
+  }
