@@ -6,10 +6,10 @@ homebrew_repositories:
   - homebrew/cask-fonts
   - itchyny/fillin
   - jesseduffield/lazygit
+  - knqyf263/utern
   - mscharley/homebrew
   - neovim/neovim
   - universal-ctags/universal-ctags
-  - wata727/tflint
 
 homebrew_packages:
   - amazon-ecs-cli
@@ -89,7 +89,6 @@ homebrew_packages:
   - terraform
   - thefuck
   - tig
-  - tflint
   - tldr
   - tmux
   - tree
