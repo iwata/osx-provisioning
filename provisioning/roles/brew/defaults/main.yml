@@ -3,6 +3,7 @@ homebrew_repositories:
   - argon/mas
   - boz/repo
   - derailed/k9s
+  - garethr/kubeval
   - homebrew/cask-fonts
   - itchyny/fillin
   - jesseduffield/lazygit
@@ -62,6 +63,7 @@ homebrew_packages:
   - kail
   - keychain
   - kubectx
+  - kubeval
   - name: vim
     install_options: with-luajit,with-python3,with-tcl
   - lazygit
