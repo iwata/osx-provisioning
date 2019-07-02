@@ -13,11 +13,12 @@ homebrew_cask_packages:
   - insomnia
   - iterm2
   - hammerspoon
-  - kensington-trackball-works
+  # - kensington-trackball-works
   - launchrocket
   - mailplane
   - mark-text
   - ngrok
+  - osxfuse
   - postman
   - popclip
   - skitch

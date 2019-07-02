@@ -1,7 +1,6 @@
 ---
 gem_modules:
   - bundler
-  - colorls
   - gem-ctags
   - gem-browse
   - git-browse-remote

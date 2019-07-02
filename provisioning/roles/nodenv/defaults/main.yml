@@ -1,23 +1,28 @@
 ---
 npm_modules:
   - '@vue/cli'
+  - commitizen
+  - cz-emoji
   - dockerfile-language-server-nodejs
   - docto
   - firebase-tools
   - gapps
   - gh
-  - gitmoji-cli
   - htmlhint
   - jsonlint
   - instant-markdown-d
+  - markdownlint-cli
   - mdr
   - neovim
   - ndb
   - node-google-apps-script
   - pretty-diff
+  - svg-term-cli
+  - ts-node
   - typescript
   - typescript-language-server
   - vmd
+  - vscode-css-languageserver-bin
   - vscode-html-languageserver-bin
   - vue-language-server
   - yarn

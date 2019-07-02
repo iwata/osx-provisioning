@@ -2,23 +2,28 @@
 homebrew_repositories:
   - argon/mas
   - boz/repo
+  - datawire/blackbird # telepresence
   - derailed/k9s
   - garethr/kubeval
   - homebrew/cask-fonts
   - itchyny/fillin
   - jesseduffield/lazygit
   - knqyf263/utern
+  - kyoh86/tap
+  - minamijoyo/tfschema
   - mscharley/homebrew
   - neovim/neovim
   - universal-ctags/universal-ctags
 
 homebrew_packages:
-  - amazon-ecs-cli
+  # - amazon-ecs-cli
   - autojump
   - autossh
   - awscli
   - bat
+  - ccat
   - ccze
+  # - circleci
   - cmigemo
   - colordiff
   - coreutils
@@ -27,7 +32,7 @@ homebrew_packages:
   - direnv
   - docker
   - docker-compose
-  - docker-machine
+  # - docker-machine
   - editorconfig
   - exiftool
   - fd
@@ -35,9 +40,12 @@ homebrew_packages:
   - fish
   - name: findutils
     install_options: with-default-names
+  - fselect
+  - fx
   - fzf
   - ghq
   - git
+  - git-flow
   - git-lfs
   - name: global
     install_options: with-ctags,with-pygments
@@ -67,9 +75,10 @@ homebrew_packages:
   - name: vim
     install_options: with-luajit,with-python3,with-tcl
   - lazygit
+  - lsd
   - lv
   - luarocks
-  - mas
+  # - mas
   - mkcert
   - ncdu
   - name: neovim
@@ -81,27 +90,36 @@ homebrew_packages:
   - peco
   - plantuml
   - prettyping
+  - protobuf
+  - prototool
   - pstree
   - pv
   - pyenv
+  - ranger
   - rbenv
   - ruby-build
   - reattach-to-user-namespace
+  - richgo
   - ripgrep
+  - telepresence
+  # - tfschema
   - terraform
   - thefuck
   - tig
   - tldr
   - tmux
+  - tokei
   - tree
   - name: universal-ctags
     state: head
+    install_options: with-jansson,with-libyaml
   - shared-mime-info
-  - sleepwatcher
+  # - sleepwatcher
   - source-highlight
   - ssh-copy-id
   - sshrc
   - xhyve
+  - watchman
   - wget
   - wdiff
   - zlib

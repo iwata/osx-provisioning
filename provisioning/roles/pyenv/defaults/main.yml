@@ -5,6 +5,7 @@ pip_modules:
   - aws-shell
   - flake8
   - httpie
+  - http-prompt
   - httpstat
   - neovim
   - nose
