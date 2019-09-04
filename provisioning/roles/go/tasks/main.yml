@@ -3,7 +3,7 @@
   register: go_module
   failed_when: go_module.rc not in [0, 1]
   changed_when: go_module.rc not in [0, 1]
-  when: modules
+  when: item != ""
   with_items: "{{ modules }}"
 
 - name: install go modules
