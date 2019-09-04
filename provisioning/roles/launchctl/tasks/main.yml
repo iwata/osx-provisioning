@@ -5,9 +5,9 @@
     dest: "{{ ansible_user_dir }}/Library/LaunchAgents/local.{{ item }}.plist"
     mode: 0600
   with_items: "{{ plist_files }}"
-  when: plist_files
+  when: item != ""
 
 - name: load plist
   shell: "launchctl load {{ ansible_user_dir }}/Library/LaunchAgents/local.{{ item }}.plist && launchctl start local.{{ item }}"
   with_items: "{{ plist_files }}"
-  when: plist_files
+  when: item != ""

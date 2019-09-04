@@ -7,7 +7,7 @@ import os
 def main():
     python_interp = os.popen('which python').read().rstrip()
     java_home = os.popen('/usr/libexec/java_home').read().rstrip()
-    google_ime = os.popen('which google-ime-skk').read().rstrip()
+    google_ime = os.popen('which gskkserv').read().rstrip()
 
     print(json.dumps({
         'localhost': {
