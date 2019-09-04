@@ -129,13 +129,6 @@ mac_defaults_settings:
     value: 1,
   }
 
-  - {
-    domain: com.apple.universalaccess,
-    key: mouseDriverCursorSize,
-    type: float,
-    value: 1,
-  }
-
   # Dock
   - {
     domain: com.apple.dock,
