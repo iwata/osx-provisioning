@@ -1,13 +1,14 @@
 ---
 homebrew_cask_packages:
-  - alfred
+  # - alfred
+  - alacritty
   - aquaskk
   - captain
   - choosy
   - clipy
   - dash
-  - flux
-  - font-hack-nerd-font
+  # - flux
+  # - font-hack-nerd-font
   - gas-mask
   - google-cloud-sdk
   - insomnia
@@ -15,13 +16,13 @@ homebrew_cask_packages:
   - hammerspoon
   # - kensington-trackball-works
   - launchrocket
-  - mailplane
-  - mark-text
-  - ngrok
-  - osxfuse
+  #  - mailplane
+  # - mark-text
+  # - ngrok
+  # - osxfuse
   - postman
-  - popclip
+  # - popclip
   - skitch
-  - slack
+  # - slack
+  - spotify
   - visual-studio-code
-  - windownaut
