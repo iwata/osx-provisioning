@@ -1,6 +1,6 @@
 ---
-- name: upgrade npm
-  shell: npm install -g npm
+# - name: upgrade npm
+#   shell: npm install -g npm
 - name: install npm modules into system node
   npm:
     name: "{{ item }}"

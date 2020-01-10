@@ -4,8 +4,6 @@ gem_modules:
   - gem-ctags
   - gem-browse
   - git-browse-remote
-  - google-ime-skk
-  - haml-lint
   - neovim
   - rake
   #- terminal-notifier
@@ -13,4 +11,3 @@ gem_modules:
   - fastri
   - sqlint
   - rubocop
-  - refe2

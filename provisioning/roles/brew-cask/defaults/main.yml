@@ -6,7 +6,7 @@ homebrew_cask_packages:
   - captain
   - choosy
   - clipy
-  - dash
+  # - dash
   # - flux
   # - font-hack-nerd-font
   - gas-mask
@@ -16,6 +16,7 @@ homebrew_cask_packages:
   - hammerspoon
   # - kensington-trackball-works
   - launchrocket
+  - muzzle
   #  - mailplane
   # - mark-text
   # - ngrok

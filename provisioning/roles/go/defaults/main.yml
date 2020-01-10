@@ -19,20 +19,23 @@ modules:
   - github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
   - google.golang.org/grpc
   # - go.pedge.io/protoeasy/cmd/protoeasy
+  - github.com/kazegusuri/grpcurl
   - github.com/k0kubun/pp
   - github.com/koron/gomigemo/cmd/gmigemo
-  - github.com/monochromegane/dragon-imports/cmd/dragon-imports
+  # - "github.com/monochromegane/dragon-imports/..."
   - github.com/mattn/mkup
   - github.com/mattn/files
   - github.com/motemen/gore
+  # - github.com/mvdan/sh/cmd/shfmt
   - github.com/oxequa/realize
   - github.com/Songmu/ghg/cmd/ghg
   - github.com/sonots/lltsv
+  - github.com/po3rin/gofmtmd/cmd/gofmtmd
   - github.com/pocke/whichpr
   - github.com/pwaller/goimports-update-ignore
   - golang.org/x/tools/cmd/eg
   - golang.org/x/tools/cmd/godoc
-  - golang.org/x/tools/cmd/gopls
+  - "golang.org/x/tools/gopls@latest"
   - golang.org/x/tools/cmd/gomvpkg
   - mvdan.cc/sh/cmd/shfmt
   - mvdan.cc/gofumpt

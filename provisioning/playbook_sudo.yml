@@ -4,10 +4,9 @@
   roles:
     - fish
     - gatekeeper
-    - gcp
-  tasks:
-    - name: symlink Alacritty.app
-      file:
-        src: /usr/local/opt/alacritty/Applications/Alacritty.app
-        dest: /Applications/Alacritty.app
-        state: link
+  # tasks:
+  #   - name: symlink Alacritty.app
+  #     file:
+  #       src: /usr/local/opt/alacritty/Applications/Alacritty.app
+  #       dest: /Applications/Alacritty.app
+  #       state: link

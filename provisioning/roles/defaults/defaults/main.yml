@@ -384,17 +384,6 @@ mac_defaults_settings:
     type: int,
     value: 40,
   }
-  # Key Repeat
-  - {
-    key: KeyRepeat,
-    type: int,
-    value: 0,
-  }
-  - {
-    key: InitialKeyRepeat,
-    type: int,
-    value: 10,
-  }
   # Disable disk image verification
   - {
     domain: com.apple.frameworks.diskimages,

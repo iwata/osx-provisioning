@@ -11,7 +11,7 @@
   when: item.rc == 1
   with_items: "{{ go_module.results }}"
   environment:
-    GO111MODULE: "off"
+    GO111MODULE: "on"
 
-- name: dragon-imports
-  command: dragon-imports
+# - name: dragon-imports
+#   command: dragon-imports

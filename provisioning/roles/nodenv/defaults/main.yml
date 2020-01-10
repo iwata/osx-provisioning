@@ -1,12 +1,12 @@
 ---
 npm_modules:
-  - '@vue/cli'
+  # - '@vue/cli'
   - commitizen
   - cz-emoji
   - dockerfile-language-server-nodejs
   - docto
   - firebase-tools
-  - gapps
+  # - gapps
   - gh
   - htmlhint
   - jsonlint
@@ -14,15 +14,15 @@ npm_modules:
   - markdownlint-cli
   - mdr
   - neovim
-  - ndb
-  - node-google-apps-script
+  # - ndb
+  # - node-google-apps-script
   - pretty-diff
-  - svg-term-cli
+  # - svg-term-cli
   - ts-node
   - typescript
   - typescript-language-server
   - vmd
   - vscode-css-languageserver-bin
   - vscode-html-languageserver-bin
-  - vue-language-server
+  # - vue-language-server
   - yarn

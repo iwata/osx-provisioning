@@ -1,15 +1,15 @@
 ---
 - name: confirm whether already installed or not
   register: result
-  ignore_errors: True
-  shell: gskkserv
+  stat:
+    path: "{{ ansible_user_dir }}/.cargo/bin/gskkserv"
 
 - name: git clone
   git:
     repo: https://github.com/yoshitsugu/google-ime-skkserv-rs
     dest: "{{ ansible_repos_dir }}/google-ime-skkserv-rs"
-    update: no
-  when: result is failed
+    update: yes
+  when: not result.stat.exists
 - name: cargo install
   command: bash -c "cd {{ ansible_repos_dir }}/google-ime-skkserv-rs; cargo install --path ./"
-  when: result is failed
+  when: not result.stat.exists

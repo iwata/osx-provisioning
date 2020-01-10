@@ -6,7 +6,7 @@ homebrew_repositories:
   - derailed/k9s
   - garethr/kubeval
   - homebrew/cask-fonts
-  - itchyny/fillin
+  - itchyny/tap # fillin
   - jesseduffield/lazygit
   - knqyf263/utern
   - kyoh86/tap
@@ -38,27 +38,23 @@ homebrew_packages:
   - fd
   - fillin
   - fish
-  - name: findutils
-    install_options: with-default-names
+  - findutils
   - fselect
   - fx
   - fzf
+  - gawk
   - ghq
   - git
   - git-flow
   - git-lfs
-  - name: global
-    install_options: with-ctags,with-pygments
+  - global
   - gnu-getopt
-  - name: gnu-tar
-    install_options: with-default-names
-  - name: gnu-sed
-    install_options: with-default-names
+  - gnu-tar
+  - gnu-sed
   - go
   - golangci/tap/golangci-lint
   - grc
-  - name: grep
-    install_options: with-default-names
+  - grep
   - hadolint
   - htop
   - hub
@@ -72,8 +68,7 @@ homebrew_packages:
   - keychain
   - kubectx
   - kubeval
-  - name: vim
-    install_options: with-luajit,with-python3,with-tcl
+  - vim
   - lazygit
   - lsd
   - lv
@@ -94,6 +89,7 @@ homebrew_packages:
   - prototool
   - pstree
   - pv
+  - pwgen
   - pyenv
   - ranger
   - rbenv
@@ -101,6 +97,7 @@ homebrew_packages:
   - reattach-to-user-namespace
   - richgo
   - ripgrep
+  - rust
   - telepresence
   # - tfschema
   - terraform
@@ -110,14 +107,15 @@ homebrew_packages:
   - tmux
   - tokei
   - tree
-  - name: universal-ctags
-    state: head
-    install_options: with-jansson,with-libyaml
+  #- name: universal-ctags
+    #state: head
+    #install_options: with-jansson,with-libyaml
   - shared-mime-info
   # - sleepwatcher
   - source-highlight
   - ssh-copy-id
-  - sshrc
+  # - sshrc
+  - starship
   - xhyve
   - watchman
   - wget

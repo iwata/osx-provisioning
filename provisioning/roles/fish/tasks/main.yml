@@ -27,13 +27,13 @@
   become: true
   become_method: sudo
 
-- name: notify please input password
-  shell: >
-    osascript -e 'display notification "Please input password in terminal" with title "osx-provisioning"'
-
-- name: change login shell
-  shell: >
-    chpass -s {{which_fish.stdout}}
-  register: result
-  until: result.rc == 0
-  retries: 3
+# - name: notify please input password
+#   shell: >
+#     osascript -e 'display notification "Please input password in terminal" with title "osx-provisioning"'
+#
+# - name: change login shell
+#   shell: >
+#     chpass -s {{which_fish.stdout}}
+#   register: result
+#   until: result.rc == 0
+#   retries: 3

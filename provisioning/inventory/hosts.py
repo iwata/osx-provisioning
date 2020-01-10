@@ -24,7 +24,7 @@ def main():
                     'ansible_google_ime_path': google_ime,
                     'ansible_user_dir': os.environ['HOME'],
                     'ansible_user_id': os.environ['USER'],
-                    'ansible_repos_dir': '%s/Dropbox/repos' % os.environ['HOME']
+                    'ansible_repos_dir': '%s/repos' % os.environ['HOME']
                     }
                 }
             }

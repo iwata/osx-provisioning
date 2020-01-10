@@ -6,13 +6,14 @@
   roles:
     - cica
     - go
+    - gskkserv
     - launchctl
-  tasks:
-    - name: download iTerm2 color theme
-      get_url: url=https://raw.github.com/aereal/dotfiles/master/colors/Japanesque/Japanesque.itermcolors dest=/tmp/Japanesque.itermcolors force=True
-    - name: install preset to iTerm2
-      command: open /tmp/Japanesque.itermcolors
-    - name: clone tmux plugin manager
-      git:
-        repo: 'https://github.com/tmux-plugins/tpm'
-        dest: "{{ ansible_user_dir }}/.tmux/plugins/tpm"
+  # tasks:
+  #   - name: download iTerm2 color theme
+  #     get_url: url=https://raw.github.com/aereal/dotfiles/master/colors/Japanesque/Japanesque.itermcolors dest=/tmp/Japanesque.itermcolors force=True
+  #   - name: install preset to iTerm2
+  #     command: open /tmp/Japanesque.itermcolors
+  #   - name: clone tmux plugin manager
+  #     git:
+  #       repo: 'https://github.com/tmux-plugins/tpm'
+  #       dest: "{{ ansible_user_dir }}/.tmux/plugins/tpm"

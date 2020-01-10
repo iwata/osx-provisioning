@@ -4,3 +4,9 @@
   roles:
     - brew
     - brew-cask
+  tasks:
+    - name: make repos dir
+      file:
+        path: "{{ ansible_repos_dir }}"
+        state: directory
+        mode: "0755"

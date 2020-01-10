@@ -3,12 +3,12 @@
   ignore_errors: "True"
   shell: pyenv init
 
-- name: confirm whether installed python2 or not
-  register: result2
-  ignore_errors: "True"
-  shell: pyenv versions |grep "{{ python_version2 }}"
+# - name: confirm whether installed python2 or not
+#   register: result2
+#   ignore_errors: "True"
+#   shell: pyenv versions |grep "{{ python_version2 }}"
 
-- name: install python2
+# - name: install python2
   # environment:
     # PYTHON_CONFIGURE_OPTS: "--enable-shared"
     # LDFLAGS: "-L/usr/local/opt/sqlite/lib -L/usr/local/opt/zlib/lib"
@@ -17,21 +17,21 @@
     # LDSHARED: "clang -bundle"
     # LDCXXSHARED: "clang++ -bundle"
     # BLDSHARED: "clang -bundle -lpython2.7"
-  shell: pyenv install "{{ python_version2 }}"
-  when: result2 is failed
-
-- name: use python2
-  shell: pyenv global "{{ python_version2 }}"
-
-- name: rehash python2
-  shell: pyenv rehash
-
-- name: upgrade pip
-  shell: pip install --upgrade pip
-
-- name: install pip modules
-  pip:
-    name: "{{ pip_modules }}"
+#   shell: pyenv install "{{ python_version2 }}"
+#   when: result2 is failed
+#
+# - name: use python2
+#   shell: pyenv global "{{ python_version2 }}"
+#
+# - name: rehash python2
+#   shell: pyenv rehash
+#
+# - name: upgrade pip
+#   shell: pip install --upgrade pip
+#
+# - name: install pip modules
+#   pip:
+#     name: "{{ pip_modules }}"
 
 - name: confirm whether installed python3 or not
   register: result3
